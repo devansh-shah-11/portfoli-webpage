@@ -4,6 +4,7 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import PythonIC from "./icons/Python.astro"
 
 const TAGS = {
   NEXT: {
@@ -16,6 +17,26 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  STREAMLIT: {
+    name: "Streamlit",
+    class: "bg-[#ff4b4b] text-white",
+    icon: Tailwind,
+  },
+  PILLOW: {
+    name: "Pillow",
+    class: "bg-[#ff4b4b] text-white",
+    icon: Tailwind,
+  },
+  HEIF: {
+    name: "HEIF",
+    class: "bg-[#ff4b4b] text-white",
+    icon: Tailwind,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#ff4b4b] text-white",
+    icon: PythonIC,
+  },
 }
 const PROJECTS = [
   {
@@ -25,7 +46,7 @@ const PROJECTS = [
     link: "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
     github:"https://github.com/Devasy23/Image_captionning_project",
     image: "/projects/image-captioning.webp", // replace with your project image path
-    tags: [], // add tags if needed
+    tags: [TAGS.PYTHON], // add tags if needed
   },
   {
     title: "Custom Object Detection System with TensorFlow.js and Firebase",
@@ -33,7 +54,7 @@ const PROJECTS = [
       "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
     image: "/projects/object-detection-system.webp", // replace with your project image path
     link: "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
-    tags: [], // add tags if needed
+    tags: [TAGS.PYTHON], // add tags if needed
   },
   // {
   //   title: "Hybrid Movie Recommendation System",
@@ -49,7 +70,7 @@ const PROJECTS = [
     image: "/projects/jpg-to-heif-converter.webp", // replace with your project image path
     link:"https://jpgtoheifconverter.streamlit.app/",
     github:"https://github.com/Devasy23/JPG2HEIF", 
-    tags: [], // add tags if needed "Streamlit", "Pillow", "HEIF"
+    tags: [TAGS.PYTHON], // add tags if needed "Streamlit", "Pillow", "HEIF"
   },
 ]
 ---
@@ -60,7 +81,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="Image for the project's preview" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
