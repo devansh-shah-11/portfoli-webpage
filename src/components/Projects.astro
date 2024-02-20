@@ -5,6 +5,11 @@ import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import PythonIC from "./icons/Python.astro"
+import Streamlit from "./icons/Streamlit.astro"
+import Tensorflow from "./icons/Tensorflow.astro"
+import Firebase from "./icons/Firebase.astro"
+import HEIC from "./icons/HEIC.astro"
+import Node from "./icons/Node.astro"
 
 const TAGS = {
   NEXT: {
@@ -19,23 +24,33 @@ const TAGS = {
   },
   STREAMLIT: {
     name: "Streamlit",
-    class: "bg-[#ff4b4b] text-white",
-    icon: Tailwind,
+    class: "bg-black text-white",
+    icon: Streamlit,
   },
-  PILLOW: {
-    name: "Pillow",
-    class: "bg-[#ff4b4b] text-white",
-    icon: Tailwind,
+  TENSORFLOW: {
+    name: "Tensorflow",
+    class: "bg-[#ff6f00] text-white",
+    icon: Tensorflow,
   },
-  HEIF: {
-    name: "HEIF",
-    class: "bg-[#ff4b4b] text-white",
-    icon: Tailwind,
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#ffca28] text-black",
+    icon: Firebase,
   },
   PYTHON: {
     name: "Python",
-    class: "bg-[#ff4b4b] text-white",
+    class: "bg-[#3776AB] text-white",
     icon: PythonIC,
+  },
+  HEIC: {
+    name: "HEIC",
+    class: "bg-[#ff4b4b] text-white",
+    icon: HEIC,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#68A063] text-white",
+    icon: Node,
   },
 }
 const PROJECTS = [
@@ -46,7 +61,7 @@ const PROJECTS = [
     link: "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
     github:"https://github.com/Devasy23/Image_captionning_project",
     image: "/projects/image-captioning.webp", // replace with your project image path
-    tags: [TAGS.PYTHON], // add tags if needed
+    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.TENSORFLOW], // add tags if needed
   },
   {
     title: "Custom Object Detection System with TensorFlow.js and Firebase",
@@ -54,7 +69,7 @@ const PROJECTS = [
       "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
     image: "/projects/object-detection-system.webp", // replace with your project image path
     link: "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
-    tags: [TAGS.PYTHON], // add tags if needed
+    tags: [TAGS.PYTHON, TAGS.FIREBASE, TAGS.TENSORFLOW, TAGS.NODE], // add tags if needed
   },
   // {
   //   title: "Hybrid Movie Recommendation System",
@@ -70,7 +85,7 @@ const PROJECTS = [
     image: "/projects/jpg-to-heif-converter.webp", // replace with your project image path
     link:"https://jpgtoheifconverter.streamlit.app/",
     github:"https://github.com/Devasy23/JPG2HEIF", 
-    tags: [TAGS.PYTHON], // add tags if needed "Streamlit", "Pillow", "HEIF"
+    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HEIC], // add tags if needed "Streamlit", "Pillow", "HEIF"
   },
 ]
 ---
