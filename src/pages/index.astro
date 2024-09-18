@@ -9,6 +9,7 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
 import Education from "@/components/Education.astro" // Import the Education component
 import EducationHat from "@/components/icons/EducationHat.astro"
 ---
@@ -25,42 +26,34 @@ import EducationHat from "@/components/icons/EducationHat.astro"
     </SectionContainer>
     <div class="space-y-24">
     <SectionContainer id="experience">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <Briefcase class="size-8" />
         Experience
-      </h2>
+      </TitleSection>
       <Experience />
     </SectionContainer>
 
     <SectionContainer id="projects">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <CodeIcon class="size-7" />
         Projects
-      </h2>
+      </TitleSection>
       <Projects />
     </SectionContainer>
 
     <SectionContainer id="education"> <!-- Add the Education section here -->
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <EducationHat class="size-8" />
         Education
-      </h2>
+      </TitleSection>
       <Education />
     </SectionContainer>
 
     <SectionContainer id="about-me">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
+      <TitleSection>
         <ProfileCheck class="size-8" />
         About Me
-      </h2>
+    </TitleSection>
       <AboutMe />
     </SectionContainer>
   </div>
