@@ -11,6 +11,11 @@ import Firebase from "./icons/Firebase.astro"
 import HEIC from "./icons/HEIC.astro"
 import Node from "./icons/Node.astro"
 
+function getYouTubeID(url) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -54,6 +59,17 @@ const TAGS = {
   },
 }
 const PROJECTS = [
+{
+  title: "News AI Dashboard",
+  description:
+  "Developed a dynamic NewsAI dashboard that leverages NLP techniques to analyze news articles, extract keywords, summarize content, and perform sentiment analysis. Implemented interactive data visualizations, including sentiment timelines, word clouds, and publication source analysis using Streamlit. Integrated multiple APIs (NewsAPI, PRAW), MongoDB for data storage, and deployed async pipelines for efficient data processing. Utilized Python libraries such as NLTK, BERT, and BeautifulSoup for text processing, FastAPI for backend API development, and Streamlit for UI, showcasing strong skills in full-stack development and machine learning.",
+  github: "https://github.com/Devasy23/NewsAI",
+  video: getYouTubeID("https://www.youtube.com/watch?v=stTXgljJVPQ"),
+  // TODO: Update tags use gemini, bert, keybert, sentiment analysis, PRAW, MongoDB, Asyncio, aiohttp
+  tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.TENSORFLOW],
+
+},
+
   {
     title: "Image Captioning Project",
     description:
@@ -92,14 +108,43 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image,video, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
+  {/* <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
       <img alt="Image for the project's preview" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
+  </div> */}
+<div class="w-full md:w-1/2">
+  <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+    {video ? (
+      <div class="relative w-full h-56 sm:h-full">
+        <img 
+          src={`https://img.youtube.com/vi/${video}/maxresdefault.jpg`}
+          alt="YouTube video thumbnail"
+          class="object-cover object-center w-full h-full"
+        />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <button 
+            class="w-16 h-16 bg-black bg-opacity-60 rounded-full flex items-center justify-center"
+            onclick={`window.open('https://www.youtube.com/watch?v=${video}', '_blank')`}
+          >
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    ) : (
+      <img 
+        alt="Image for the project's preview" 
+        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" 
+        loading="lazy" 
+        src={image} 
+      />
+    )}
   </div>
-
+</div>
   <div class="w-full md:w-1/2 md:max-w-lg">
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
       {title}
