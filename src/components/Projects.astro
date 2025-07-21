@@ -1,7 +1,8 @@
 ---
 import Card from "./Card.astro"
+import LinkButton from "./LinkButton.astro"
 
-const PROJECTS = [
+const PINNED_PROJECTS = [
   {
     title: "SVGL - A beautiful library with SVG logos",
     description:
@@ -20,9 +21,9 @@ const PROJECTS = [
 ]
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
   {
-    PROJECTS.map(({ image, title, description, link, github }) => (
+    PINNED_PROJECTS.map(({ image, title, description, link, github }) => (
       <Card
         img={image}
         title={title}
@@ -32,4 +33,26 @@ const PROJECTS = [
       />
     ))
   }
+</div>
+<div class="flex justify-center mt-8">
+  <LinkButton href="/projects">
+    Browse All
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-arrow-right"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 12l14 0"></path>
+      <path d="M13 18l6 -6"></path>
+      <path d="M13 6l6 6"></path>
+    </svg>
+  </LinkButton>
 </div>

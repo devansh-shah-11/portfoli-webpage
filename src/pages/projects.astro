@@ -1,0 +1,87 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Card from "@/components/Card.astro"
+import LinkButton from "@/components/LinkButton.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+
+const PROJECTS = [
+  {
+    title: "SVGL - A beautiful library with SVG logos",
+    description:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/svgl.webp",
+  },
+  {
+    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://adventjs.dev",
+    image: "/projects/adventjs.webp",
+  },
+  {
+    title: "Project 3",
+    description: "This is a description for the third project.",
+    link: "#",
+    image: "/porfolio.webp",
+  },
+    {
+    title: "Project 4",
+    description: "This is a description for the fourth project.",
+    link: "#",
+    image: "/porfolio.webp",
+  },
+    {
+    title: "Project 5",
+    description: "This is a description for the fifth project.",
+    link: "#",
+    image: "/porfolio.webp",
+  },
+]
+---
+
+<Layout title="Projects - midudev" description="All projects by midudev">
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <h1 class="text-4xl font-bold text-center text-gray-800 dark:text-gray-100">
+        My Projects
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        {
+          PROJECTS.map(({ image, title, description, link, github }) => (
+            <Card
+              img={image}
+              title={title}
+              description={description}
+              link={link}
+              github={github}
+            />
+          ))
+        }
+      </div>
+      <div class="flex justify-center mt-8">
+        <LinkButton href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-arrow-left"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l14 0"></path>
+            <path d="M5 12l6 6"></path>
+            <path d="M5 12l6 -6"></path>
+          </svg>
+          Go Back
+        </LinkButton>
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>
