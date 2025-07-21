@@ -7,9 +7,13 @@ import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
+import Blogs from "@/components/Blogs.astro"
+import Achievements from "@/components/Achievements.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+import Pencil from "@/components/icons/Pencil.astro"
+import Rosette from "@/components/icons/Rosette.astro"
 ---
 
 <Layout
@@ -37,6 +41,22 @@ import TitleSection from "@/components/TitleSection.astro"
         Proyectos
       </TitleSection>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="blogs">
+      <TitleSection>
+        <Pencil class="size-8" />
+        Blogs
+      </TitleSection>
+      <Blogs />
+    </SectionContainer>
+
+    <SectionContainer id="achievements">
+      <TitleSection>
+        <Rosette class="size-8" />
+        Logros
+      </TitleSection>
+      <Achievements />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
