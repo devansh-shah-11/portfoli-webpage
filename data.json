@@ -1,10 +1,131 @@
 {
-    "badge": [],
-    "hero": [],
-    "socialPills": [],
-    "briefIntro": [],
-    "experiences": [],
-    "projects": [],
-    "aboutMe": [],
-    "contact": []
+    "personal": {
+        "name": "Devasy Patel",
+        "title": "Computer Science Student",
+        "role": "Aspiring Data Scientist/ML Engineer",
+        "description": "Building data-driven solutions with Django, FastAPI, Streamlit. Strong foundation in Python and machine learning libraries. Eager to learn and contribute to innovative projects.",
+        "image": "/devasy.webp",
+        "imageAlt": "Devasy Patel",
+        "aboutImage": "/me.png",
+        "email": "patel.devasy.23@gmail.com"
+    },
+    "socialLinks": [
+        {
+            "name": "Contact me",
+            "url": "mailto:patel.devasy.23@gmail.com",
+            "icon": "Mail"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/in/devasy-patel",
+            "icon": "LinkedIn"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/Devasy23",
+            "icon": "GitHub"
+        }
+    ],
+    "about": [
+        "I am a dedicated computer science student with a deep passion for cutting-edge technologies like **TensorFlow and Firebase**. My journey in the field began with hands-on experience in both academic and professional settings. As a research assistant, I delved into the fascinating realm of **face recognition systems**, exploring the intricacies of machine learning algorithms to develop robust solutions. Additionally, my internship exposed me to the challenges of **low-resolution image classification**, where I honed my skills in data preprocessing and model optimization.",
+        "Collaboration is at the heart of my approach to problem-solving. Whether working alongside fellow researchers or collaborating with cross-functional teams during my internship, I thrive in environments where **diverse perspectives converge** to tackle complex challenges. My ability to communicate effectively and adapt to different working styles has been instrumental in driving projects forward and achieving impactful results.",
+        "Beyond technical expertise, I bring a relentless drive to innovate and create software solutions that make a difference in people's lives. Whether it's enhancing user experiences or optimizing system performance, I am committed to delivering solutions of the **highest quality**. With a focus on **continuous learning** and a passion for pushing the boundaries of what's possible, I am excited to contribute my skills and enthusiasm to projects that have a meaningful impact on millions of users worldwide."
+    ],
+    "experiences": [
+        {
+            "date": "December 2023 - Present",
+            "title": "Software Engineer",
+            "company": "Crest Data, India",
+            "link": "https://www.crestdata.ai/",
+            "description": "Automated compliance checks for Kubernetes clusters using the client-go library, focusing on audit automation and cluster configuration management. Gained experience with Kubernetes, Go, and API server interactions. Built a software dependency tracking system for analyzing repository data from GitHub, implementing data collection workflows with Celery, Redis, and FastAPI. Developed preprocessing pipelines, handled data imbalances, and trained machine learning models for insights. Proficient in Kubernetes, Go, Python (FastAPI), PostgreSQL, and machine learning model development."
+        },
+        {
+            "date": "June 2023 - July 2023",
+            "title": "Research Intern",
+            "company": "Indian Navy, INS Valsura Jamnagar",
+            "description": "Developed and Deployed end-to-end Facial Recognition System for the Indian Navy using Django, creating efficient API endpoints to handle data processing and storage. Collaborated with a team to build the frontend of the system using Node.js and React, integrating the Facenet model for accurate face recognition, and employing MongoDB as the database for seamless data management. Also developed another project where build a model to classify objects from very low resolution images."
+        }
+    ],
+    "education": [
+        {
+            "date": "2020 - 2024",
+            "degree": "Bachelor of Technology",
+            "institution": "Institute of Technology, Nirma University, Ahmedabad",
+            "description": "Specialization in Computer Science and Engineering. Relevant coursework includes Data Structures, Algorithms, Machine Learning, and Artificial Intelligence."
+        }
+    ],
+    "technologies": {
+        "NEXT": {
+            "name": "Next.js",
+            "class": "bg-black text-white",
+            "icon": "NextJS"
+        },
+        "TAILWIND": {
+            "name": "Tailwind CSS",
+            "class": "bg-[#003159] text-white",
+            "icon": "Tailwind"
+        },
+        "STREAMLIT": {
+            "name": "Streamlit",
+            "class": "bg-black text-white",
+            "icon": "Streamlit"
+        },
+        "TENSORFLOW": {
+            "name": "Tensorflow",
+            "class": "bg-[#ff6f00] text-white",
+            "icon": "Tensorflow"
+        },
+        "FIREBASE": {
+            "name": "Firebase",
+            "class": "bg-[#ffca28] text-black",
+            "icon": "Firebase"
+        },
+        "PYTHON": {
+            "name": "Python",
+            "class": "bg-[#3776AB] text-white",
+            "icon": "Python"
+        },
+        "HEIC": {
+            "name": "HEIC",
+            "class": "bg-[#ff4b4b] text-white",
+            "icon": "HEIC"
+        },
+        "NODE": {
+            "name": "Node.js",
+            "class": "bg-[#68A063] text-white",
+            "icon": "Node"
+        }
+    },
+    "projects": [
+        {
+            "title": "News AI Dashboard",
+            "description": "Developed a dynamic NewsAI dashboard that leverages NLP techniques to analyze news articles, extract keywords, summarize content, and perform sentiment analysis. Implemented interactive data visualizations, including sentiment timelines, word clouds, and publication source analysis using Streamlit. Integrated multiple APIs (NewsAPI, PRAW), MongoDB for data storage, and deployed async pipelines for efficient data processing. Utilized Python libraries such as NLTK, BERT, and BeautifulSoup for text processing, FastAPI for backend API development, and Streamlit for UI, showcasing strong skills in full-stack development and machine learning.",
+            "github": "https://github.com/Devasy23/NewsAI",
+            "video": "stTXgljJVPQ",
+            "tags": ["PYTHON", "STREAMLIT", "TENSORFLOW"]
+        },
+        {
+            "title": "Image Captioning Project",
+            "description": "Developed an Image Captioning project using a CNN-LSTM architecture, trained on the Flickr8k dataset, achieving over 60% accuracy in generating descriptive captions for images. Evaluated the model's performance using metrics such as BLEU score, showcasing the project's ability to generate captions that closely match human-written descriptions.",
+            "link": "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
+            "github": "https://github.com/Devasy23/Image_captionning_project",
+            "image": "/projects/image-captioning.webp",
+            "tags": ["PYTHON", "STREAMLIT", "TENSORFLOW"]
+        },
+        {
+            "title": "Custom Object Detection System with TensorFlow.js and Firebase",
+            "description": "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
+            "image": "/projects/object-detection-system.webp",
+            "link": "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
+            "tags": ["PYTHON", "FIREBASE", "TENSORFLOW", "NODE"]
+        },
+        {
+            "title": "JPG to HEIF Converter",
+            "description": "This project allows you to freely convert JPG images to HEIF format. HEIF (High Efficiency Image Format) is a more efficient image format in terms of storage and quality compared to traditional formats like JPG. Why HEIF? HEIF, as the name suggests, is a high-efficiency image format. Not only does it offer smaller file sizes compared to JPG, but it also provides better image quality. This makes it an excellent choice for anyone looking to save storage space without compromising on image quality.",
+            "github": "https://github.com/Devasy23/JPG2HEIF",
+            "link": "https://jpgtoheifconverter.streamlit.app/",
+            "image": "/projects/jpg-to-heif-converter.webp",
+            "tags": ["PYTHON", "HEIC"]
+        }
+    ]
 }

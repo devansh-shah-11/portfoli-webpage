@@ -1,27 +1,13 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import Link from "./icons/Link.astro"
-const EXPERIENCE = [
-  {
-    date: "December 2023 - Present",
-    title: "Software Engineer",
-    company: "Crest Data, India",
-    Link: "https://www.crestdata.ai/",
-    description: "Automated compliance checks for Kubernetes clusters using the client-go library, focusing on audit automation and cluster configuration management. Gained experience with Kubernetes, Go, and API server interactions. Built a software dependency tracking system for analyzing repository data from GitHub, implementing data collection workflows with Celery, Redis, and FastAPI. Developed preprocessing pipelines, handled data imbalances, and trained machine learning models for insights. Proficient in Kubernetes, Go, Python (FastAPI), PostgreSQL, and machine learning model development.",
-  },
-  {
-    date: "June 2023 - July 2023",
-    title: "Research Intern",
-    company: "Indian Navy, INS Valsura Jamnagar",
-    description:
-      "Developed and Deployed end-to-end Facial Recognition System for the Indian Navy using Django, creating efficient API endpoints to handle data processing and storage. Collaborated with a team to build the frontend of the system using Node.js and React, integrating the Facenet model for accurate face recognition, and employing MongoDB as the database for seamless data management. Also developed another project where build a model to classify objects from very low resolution images.",
-  },
-]
+import data from "../../data.json"
+
+const { experiences } = data
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCE.map((experience) => (
+    experiences.map((experience) => (
       <li class="">
         <ExperienceItem {...experience} />
       </li>

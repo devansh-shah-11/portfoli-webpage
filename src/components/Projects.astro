@@ -10,111 +10,36 @@ import Tensorflow from "./icons/Tensorflow.astro"
 import Firebase from "./icons/Firebase.astro"
 import HEIC from "./icons/HEIC.astro"
 import Node from "./icons/Node.astro"
+import data from "../../data.json"
 
-function getYouTubeID(url: string) {
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : null;
+const { projects, technologies } = data
+
+// Icon mapping
+const iconMap = {
+  NextJS: NextJS,
+  Tailwind: Tailwind,
+  Streamlit: Streamlit,
+  Tensorflow: Tensorflow,
+  Firebase: Firebase,
+  Python: PythonIC,
+  HEIC: HEIC,
+  Node: Node,
 }
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-  STREAMLIT: {
-    name: "Streamlit",
-    class: "bg-black text-white",
-    icon: Streamlit,
-  },
-  TENSORFLOW: {
-    name: "Tensorflow",
-    class: "bg-[#ff6f00] text-white",
-    icon: Tensorflow,
-  },
-  FIREBASE: {
-    name: "Firebase",
-    class: "bg-[#ffca28] text-black",
-    icon: Firebase,
-  },
-  PYTHON: {
-    name: "Python",
-    class: "bg-[#3776AB] text-white",
-    icon: PythonIC,
-  },
-  HEIC: {
-    name: "HEIC",
-    class: "bg-[#ff4b4b] text-white",
-    icon: HEIC,
-  },
-  NODE: {
-    name: "Node.js",
-    class: "bg-[#68A063] text-white",
-    icon: Node,
-  },
-}
-const PROJECTS = [
-{
-  title: "News AI Dashboard",
-  description:
-  "Developed a dynamic NewsAI dashboard that leverages NLP techniques to analyze news articles, extract keywords, summarize content, and perform sentiment analysis. Implemented interactive data visualizations, including sentiment timelines, word clouds, and publication source analysis using Streamlit. Integrated multiple APIs (NewsAPI, PRAW), MongoDB for data storage, and deployed async pipelines for efficient data processing. Utilized Python libraries such as NLTK, BERT, and BeautifulSoup for text processing, FastAPI for backend API development, and Streamlit for UI, showcasing strong skills in full-stack development and machine learning.",
-  github: "https://github.com/Devasy23/NewsAI",
-  video: getYouTubeID("https://www.youtube.com/watch?v=stTXgljJVPQ"),
-  // TODO: Update tags use gemini, bert, keybert, sentiment analysis, PRAW, MongoDB, Asyncio, aiohttp
-  tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.TENSORFLOW],
 
-},
-
-  {
-    title: "Image Captioning Project",
-    description:
-      "Developed an Image Captioning project using a CNN-LSTM architecture, trained on the Flickr8k dataset, achieving over 60% accuracy in generating descriptive captions for images. Evaluated the model's performance using metrics such as BLEU score, showcasing the project's ability to generate captions that closely match human-written descriptions.",
-    link: "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
-    github:"https://github.com/Devasy23/Image_captionning_project",
-    image: "/projects/image-captioning.webp", // replace with your project image path
-    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.TENSORFLOW], // add tags if needed
-  },
-  {
-    title: "Custom Object Detection System with TensorFlow.js and Firebase",
-    description:
-      "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
-    image: "/projects/object-detection-system.webp", // replace with your project image path
-    link: "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
-    tags: [TAGS.PYTHON, TAGS.FIREBASE, TAGS.TENSORFLOW, TAGS.NODE], // add tags if needed
-  },
-  // {
-  //   title: "Hybrid Movie Recommendation System",
-  //   description:
-  //     "Developed a movie recommendation system capable of providing content-based recommendations and collaborative filtering-based recommendations (used the movielens 100k dataset). Achieved 93% accuracy in predicting user ratings for unseen movies, resulting in improved user experience and a 10% increase in average user engagement. Integrated NLP algorithms to assess user preferences, providing more personalized and curated movie recommendations.",
-  //   image: "/projects/movie-recommendation-system.webp", // replace with your project image path
-  //   tags: [], // add tags if needed
-  // },
-  {
-    title: "JPG to HEIF Converter",
-    description:
-      "This project allows you to freely convert JPG images to HEIF format. HEIF (High Efficiency Image Format) is a more efficient image format in terms of storage and quality compared to traditional formats like JPG. Why HEIF? HEIF, as the name suggests, is a high-efficiency image format. Not only does it offer smaller file sizes compared to JPG, but it also provides better image quality. This makes it an excellent choice for anyone looking to save storage space without compromising on image quality.",
-    image: "/projects/jpg-to-heif-converter.webp", // replace with your project image path
-    link:"https://jpgtoheifconverter.streamlit.app/",
-    github:"https://github.com/Devasy23/JPG2HEIF", 
-    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HEIC], // add tags if needed "Streamlit", "Pillow", "HEIF"
-  },
-]
+// Convert technologies object to the expected format with icons
+const TAGS = Object.entries(technologies).reduce((acc, [key, tech]) => {
+  acc[key] = {
+    ...tech,
+    icon: iconMap[tech.icon as keyof typeof iconMap]
+  }
+  return acc
+}, {} as any)
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image,video, title, description, tags, link, github }) => (
+    projects.map(({ image, video, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  {/* <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Image for the project's preview" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div> */}
 <div class="w-full md:w-1/2">
   <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
     {video ? (
@@ -151,16 +76,19 @@ const PROJECTS = [
     </h3>
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
+          {tags.map((tagKey) => {
+            const tag = TAGS[tagKey]
+            return (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            )
+          })}
         </ul>
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>

@@ -1,19 +1,13 @@
 ---
 import EducationItem from "./EducationItem.astro"
-const EDUCATION = [
-{
-        date: "2020 - 2024",
-        degree: "Bachelor of Technology",
-        institution: "Institute of Technology, Nirma University, Ahmedabad",
-        description:
-            "Specialization in Computer Science and Engineering. Relevant coursework includes Data Structures, Algorithms, Machine Learning, and Artificial Intelligence.",
-    },
-    // Add more education items here
-]
+import data from "../../data.json"
+
+const { education } = data
 ---
+
 <ol class="relative mt-16">
     {
-        EDUCATION.map((education) => (
+        education.map((education) => (
             <li class="">
                 <EducationItem {...education} />
             </li>
