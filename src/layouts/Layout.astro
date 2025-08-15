@@ -1,6 +1,4 @@
 ---
-import "@fontsource-variable/onest"
-
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
@@ -25,28 +23,32 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="relative text-black dark:text-white">
+  <body class="bg-neutral-50 dark:bg-neutral-950 text-black dark:text-white">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute inset-0 -z-10 h-full w-full bg-neutral-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] dark:bg-neutral-950"
     >
     </div>
     <Header />
-    <slot />
+    <main
+      class="m-auto max-w-4xl bg-white dark:bg-neutral-900 md:my-10 md:rounded-2xl md:border md:border-neutral-200 md:shadow-lg md:dark:border-neutral-800"
+    >
+      <slot />
+    </main>
     <Footer />
     <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
       :root {
         color-scheme: light dark;
       }
 
       html {
-        font-family: "Onest Variable", system-ui, sans-serif;
+        font-family: "Geist", system-ui, sans-serif;
         scroll-behavior: smooth;
       }
 
       body {
-        color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -108,6 +110,25 @@ const { description, title } = Astro.props
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
           }
+        }
+      }
+
+      .section {
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range-start: 150px;
+        animation-range-end: 350px;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          translate: 0 50px;
+        }
+        to {
+          opacity: 1;
+          translate: 0 0;
         }
       }
     </style>
