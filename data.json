@@ -116,7 +116,8 @@
     "projects": [
         {
             "title": "Multilingual Speech Translation System",
-            "description": "Built a speeach recognitio pipeline using NVIDIA NeMo and OpenAI Whisper, fine-tuned for Gujarati (a low-resource language). Developed translation workflows to render spiritual discourses into 8 languages in the original speaker’s voice, reaching 1.2M+ subscribers across 191 countries. Preprocessed a large dataset using voice activity detection and forced alignment pipelines. Implemented semantic evaluation metrics with LLMs to improve translation quality.",
+            "description": "Built a speeach recognitio pipeline using NVIDIA NeMo and OpenAI Whisper, fine-tuned for Gujarati (a low-resource language). Developed translation workflows to render spiritual discourses into 8 languages in the original speaker's voice, reaching 1.2M+ subscribers across 191 countries. Preprocessed a large dataset using voice activity detection and forced alignment pipelines. Implemented semantic evaluation metrics with LLMs to improve translation quality.",
+            "video": "JzD9XupBTSE",
             "tags": ["PYTHON"]
         },
         {
