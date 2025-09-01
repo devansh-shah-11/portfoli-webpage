@@ -1,0 +1,16 @@
+---
+import EducationItem from "./EducationItem.astro"
+import data from "../../data.json"
+
+const { education } = data
+---
+
+<ol class="relative mt-16">
+    {
+        education.map((education) => (
+            <li class="">
+                <EducationItem {...education} />
+            </li>
+        ))
+    }
+</ol>
