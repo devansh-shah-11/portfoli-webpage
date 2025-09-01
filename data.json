@@ -1,94 +1,111 @@
 {
     "personal": {
-        "name": "Devasy Patel",
-        "title": "Computer Science Student",
+        "name": "Devansh Shah",
+        "title": "MS Computer Science at NYU Courant",
         "role": "Aspiring Data Scientist/ML Engineer",
-        "description": "Building data-driven solutions with Django, FastAPI, Streamlit. Strong foundation in Python and machine learning libraries. Eager to learn and contribute to innovative projects.",
-        "image": "/devasy.webp",
-        "imageAlt": "Devasy Patel",
-        "aboutImage": "/me.png",
-        "email": "patel.devasy.23@gmail.com"
+        "description": "Designing AI systems that connect security, language, and intelligence to solve real-world problems. Strong foundation in computer science and machine learning, with a passion for turning complex ideas into practical solutions. Always eager to learn, explore new perspectives, and contribute to projects that make a meaningful impact.",
+        "image": "/devansh.jpg",
+        "imageAlt": "Devansh Shah",
+        "aboutImage": "/me.jpeg",
+        "email": "dns5508@nyu.edu"
     },
     "socialLinks": [
         {
             "name": "Contact me",
-            "url": "mailto:patel.devasy.23@gmail.com",
+            "url": "mailto:dns5508@nyu.edu",
             "icon": "Mail"
         },
         {
             "name": "LinkedIn",
-            "url": "https://linkedin.com/in/devasy-patel",
+            "url": "https://www.linkedin.com/in/devansh-shah11",
             "icon": "LinkedIn"
         },
         {
             "name": "GitHub",
-            "url": "https://github.com/Devasy23",
+            "url": "https://github.com/devansh-shah-11",
             "icon": "GitHub"
         }
     ],
     "about": [
-        "I am a dedicated computer science student with a deep passion for cutting-edge technologies like **TensorFlow and Firebase**. My journey in the field began with hands-on experience in both academic and professional settings. As a research assistant, I delved into the fascinating realm of **face recognition systems**, exploring the intricacies of machine learning algorithms to develop robust solutions. Additionally, my internship exposed me to the challenges of **low-resolution image classification**, where I honed my skills in data preprocessing and model optimization.",
-        "Collaboration is at the heart of my approach to problem-solving. Whether working alongside fellow researchers or collaborating with cross-functional teams during my internship, I thrive in environments where **diverse perspectives converge** to tackle complex challenges. My ability to communicate effectively and adapt to different working styles has been instrumental in driving projects forward and achieving impactful results.",
-        "Beyond technical expertise, I bring a relentless drive to innovate and create software solutions that make a difference in people's lives. Whether it's enhancing user experiences or optimizing system performance, I am committed to delivering solutions of the **highest quality**. With a focus on **continuous learning** and a passion for pushing the boundaries of what's possible, I am excited to contribute my skills and enthusiasm to projects that have a meaningful impact on millions of users worldwide."
+        "I am a passionate Computer Science student with strong experience in Machine Learning, Deep Learning, and LLM Security. My journey spans both professional roles and community projects — from building red-teaming pipelines for chatbots to creating multilingual speech translation systems for global audiences.",
+        "I enjoy collaborating across disciplines and thrive in solving complex problems at the intersection of AI, security, and scalable system design. Whether in research teams or volunteering with mission-driven organizations, I value diverse perspectives that lead to impactful solutions.",
+        "Beyond academics, I am motivated by the real-world impact of technology — from AI systems that enhance accessibility to secure frameworks that make applications more resilient. With a focus on continuous learning, I aspire to build systems that are not only technically robust but also meaningful to society."
     ],
     "experiences": [
         {
-            "date": "December 2023 - Present",
-            "title": "Software Engineer",
-            "company": "Crest Data, India",
-            "link": "https://www.crestdata.ai/",
-            "description": "Automated compliance checks for Kubernetes clusters using the client-go library, focusing on audit automation and cluster configuration management. Gained experience with Kubernetes, Go, and API server interactions. Built a software dependency tracking system for analyzing repository data from GitHub, implementing data collection workflows with Celery, Redis, and FastAPI. Developed preprocessing pipelines, handled data imbalances, and trained machine learning models for insights. Proficient in Kubernetes, Go, Python (FastAPI), PostgreSQL, and machine learning model development."
+            "date": "July 2024 - July 2025",
+            "title": "AI Researcher",
+            "company": "BlueInfy Solutions, Ahmedabad",
+            "description": "Led development of an automated red-teaming framework for AI chatbots using Llama-3.1 and Phi-3.5 Mini. Created synthetic data generation pipelines aligned with OWASP top 10 LLM attacks to strengthen security testing. Designed a vulnerability assessment system with a 5-point severity grading scale using fine-tuned LLMs, significantly reducing man-hours for pentesters. Worked extensively with Open-source LLM models, HuggingFace, Streamlit, Python (FastAPI)."
         },
         {
-            "date": "June 2023 - July 2023",
-            "title": "Research Intern",
-            "company": "Indian Navy, INS Valsura Jamnagar",
-            "description": "Developed and Deployed end-to-end Facial Recognition System for the Indian Navy using Django, creating efficient API endpoints to handle data processing and storage. Collaborated with a team to build the frontend of the system using Node.js and React, integrating the Facenet model for accurate face recognition, and employing MongoDB as the database for seamless data management. Also developed another project where build a model to classify objects from very low resolution images."
+            "date": "Jan 2024 - Jun 2024",
+            "title": "Machine Learning Intern",
+            "company": "NightHack Technologies, Bangalore",
+            "description": "Developed an AI-based music generator integrating facial expression, text, and voice sentiment analysis to create personalized music via Meta's MusicGen. Implemented multiprocessing pipelines reducing response latency by 20%, and achieved 84% accuracy in mood-based predictions for 50+ pilot users. Gained hands-on experience with multimodal AI systems, real-time optimizations, and user-centric design."
+        },
+        {
+            "date": "Jun 2023 - Jul 2023",
+            "title": "Machine Learning Intern",
+            "company": "Innovatics, Ahmedabad",
+            "description": "Built a custom OCR model with 87% accuracy for extracting handwritten text and tick marks from survey forms. Enhanced performance using targeted data augmentation and region-specific labeling. Automated a loan form processing pipeline to generate analytics-ready data for insurance assessments, streamlining workflows for financial analysis."
         }
     ],
     "education": [
         {
+            "date": "Sep 2025 - present",
+            "degree": "Master of Computer Science",
+            "institution": "New York University, Courant Institute of Mathematical Sciences",
+            "description": "Graduate studies with focus on Machine Learning and  Distributed Systems. Research interests include LLM security and multilingual AI systems"
+        },
+        {
             "date": "2020 - 2024",
-            "degree": "Bachelor of Technology",
+            "degree": "Bachelor of Technology, Computer Science and Engineering",
             "institution": "Institute of Technology, Nirma University, Ahmedabad",
-            "description": "Specialization in Computer Science and Engineering. Relevant coursework includes Data Structures, Algorithms, Machine Learning, and Artificial Intelligence."
+            "description": "Data Structures and Algorithms, Machine Learning, Deep Learning, Digital Image Processing, Information Retrieval Systems, Computer Networks, Operating Systems, Big Data Analytics, Ethical Hacking."
         }
+
     ],
     "technologies": {
-        "NEXT": {
-            "name": "Next.js",
-            "class": "bg-black text-white",
-            "icon": "NextJS"
+        "PYTHON": {
+            "name": "Python",
+            "class": "bg-[#3776AB] text-white",
+            "icon": "Python"
         },
-        "TAILWIND": {
-            "name": "Tailwind CSS",
-            "class": "bg-[#003159] text-white",
-            "icon": "Tailwind"
-        },
-        "STREAMLIT": {
-            "name": "Streamlit",
-            "class": "bg-black text-white",
-            "icon": "Streamlit"
+        "PYTORCH": {
+            "name": "PyTorch",
+            "class": "bg-[#ee4c2c] text-white",
+            "icon": "PyTorch"
         },
         "TENSORFLOW": {
             "name": "Tensorflow",
             "class": "bg-[#ff6f00] text-white",
             "icon": "Tensorflow"
         },
+        "STREAMLIT": {
+            "name": "Streamlit",
+            "class": "bg-black text-white",
+            "icon": "Streamlit"
+        },
         "FIREBASE": {
             "name": "Firebase",
             "class": "bg-[#ffca28] text-black",
             "icon": "Firebase"
         },
-        "PYTHON": {
-            "name": "Python",
-            "class": "bg-[#3776AB] text-white",
-            "icon": "Python"
+        "DOCKER": {
+            "name": "Docker",
+            "class": "bg-[#0db7ed] text-white",
+            "icon": "Docker"
         },
-        "HEIC": {
-            "name": "HEIC",
-            "class": "bg-[#ff4b4b] text-white",
-            "icon": "HEIC"
+        "AWS": {
+            "name": "AWS EC2",
+            "class": "bg-[#ff9900] text-white", 
+            "icon": "AWS"
+        },
+        "GCP": {
+            "name": "GCP",
+            "class": "bg-[#ff9900] text-white",
+            "icon": "GCP"
         },
         "NODE": {
             "name": "Node.js",
@@ -98,19 +115,24 @@
     },
     "projects": [
         {
-            "title": "News AI Dashboard",
-            "description": "Developed a dynamic NewsAI dashboard that leverages NLP techniques to analyze news articles, extract keywords, summarize content, and perform sentiment analysis. Implemented interactive data visualizations, including sentiment timelines, word clouds, and publication source analysis using Streamlit. Integrated multiple APIs (NewsAPI, PRAW), MongoDB for data storage, and deployed async pipelines for efficient data processing. Utilized Python libraries such as NLTK, BERT, and BeautifulSoup for text processing, FastAPI for backend API development, and Streamlit for UI, showcasing strong skills in full-stack development and machine learning.",
-            "github": "https://github.com/Devasy23/NewsAI",
-            "video": "stTXgljJVPQ",
-            "tags": ["PYTHON", "STREAMLIT", "TENSORFLOW"]
+            "title": "Multilingual Speech Translation System",
+            "description": "Built a speeach recognitio pipeline using NVIDIA NeMo and OpenAI Whisper, fine-tuned for Gujarati (a low-resource language). Developed translation workflows to render spiritual discourses into 8 languages in the original speaker’s voice, reaching 1.2M+ subscribers across 191 countries. Preprocessed a large dataset using voice activity detection and forced alignment pipelines. Implemented semantic evaluation metrics with LLMs to improve translation quality.",
+            "tags": ["PYTHON"]
         },
         {
-            "title": "Image Captioning Project",
-            "description": "Developed an Image Captioning project using a CNN-LSTM architecture, trained on the Flickr8k dataset, achieving over 60% accuracy in generating descriptive captions for images. Evaluated the model's performance using metrics such as BLEU score, showcasing the project's ability to generate captions that closely match human-written descriptions.",
-            "link": "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
-            "github": "https://github.com/Devasy23/Image_captionning_project",
-            "image": "/projects/image-captioning.webp",
-            "tags": ["PYTHON", "STREAMLIT", "TENSORFLOW"]
+            "title": "Advanced RAG Framework",
+            "description": "Designed a Retrieval-Augmented Generation (RAG) system for multilingual chatbot recommendations. Implemented a two-step retrieval process combining summarization and smart chunking, improving both accuracy and latency. Optimized for diverse formats — PDFs, websites, audio, and video — enabling personalized and scalable knowledge delivery.",
+            "tags": ["PYTHON"]
+        },
+        {
+            "title": "Efficient Waste Management System",
+            "description": "Led a team of 3 to develop an AI-driven waste categorization system for Ahmedabad. Fine-tuned YOLOv8 to classify waste, achieving 80% accuracy. Addressed distribution shift by curating a localized dataset of Indian waste patterns. Applied data mining to optimize waste collection routes and recycling processes, contributing to sustainable city management.",
+            "tags": ["PYTHON", "TENSORFLOW"]
+        },
+        {
+            "title": "Face Recognition System",
+            "description": "Developed and deployed a face recognition system optimized for Indian faces, leveraging a ResNet backbone with triplet loss. Deployed across multiple clubs in Ahmedabad, impacting 8,000+ users. Open-sourced as a Python package, enabling developers to train, fine-tune, and evaluate Siamese-based models easily.",
+            "tags": ["PYTHON", "TENSORFLOW", "PYTORCH"]
         },
         {
             "title": "Custom Object Detection System with TensorFlow.js and Firebase",
@@ -118,14 +140,6 @@
             "image": "/projects/object-detection-system.webp",
             "link": "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
             "tags": ["PYTHON", "FIREBASE", "TENSORFLOW", "NODE"]
-        },
-        {
-            "title": "JPG to HEIF Converter",
-            "description": "This project allows you to freely convert JPG images to HEIF format. HEIF (High Efficiency Image Format) is a more efficient image format in terms of storage and quality compared to traditional formats like JPG. Why HEIF? HEIF, as the name suggests, is a high-efficiency image format. Not only does it offer smaller file sizes compared to JPG, but it also provides better image quality. This makes it an excellent choice for anyone looking to save storage space without compromising on image quality.",
-            "github": "https://github.com/Devasy23/JPG2HEIF",
-            "link": "https://jpgtoheifconverter.streamlit.app/",
-            "image": "/projects/jpg-to-heif-converter.webp",
-            "tags": ["PYTHON", "HEIC"]
         }
     ]
 }
