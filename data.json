@@ -128,14 +128,14 @@
         {
             "title": "Smart Waste Management System",
             "description": "Led a team of 3 to develop an AI-driven waste categorization system for Ahmedabad. Fine-tuned YOLOv8 to classify waste, achieving 80% accuracy. Addressed distribution shift by curating a localized dataset of Indian waste patterns. Applied data mining to optimize waste collection routes and recycling processes, contributing to sustainable city management.",
-            "image": "/public/waste-management.png",
+            "image": "waste-management.png",
             "tags": ["PYTHON", "TENSORFLOW"]
         },
         {
             "title": "Face Recognition System",
             "description": "Developed and deployed a face recognition system optimized for Indian faces, leveraging a ResNet backbone with triplet loss. Deployed across multiple clubs in Ahmedabad, impacting 8,000+ users. Open-sourced as a Python package, enabling developers to train, fine-tune, and evaluate Siamese-based models easily.",
             "tags": ["PYTHON", "TENSORFLOW", "PYTORCH"],
-            "image": "/public/face-recognition.png"
+            "image": "face-recognition.png"
         },
         {
             "title": "Custom Object Detection System with TensorFlow.js and Firebase",
