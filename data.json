@@ -141,7 +141,7 @@
             "title": "Custom Object Detection System with TensorFlow.js and Firebase",
             "description": "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
             "image": "/projects/object-detection-system.webp",
-            "link": "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
+            "link": "https://curious-malabi-16f72d.netlify.app/",
             "tags": ["PYTHON", "FIREBASE", "TENSORFLOW", "NODE"]
         }
     ]
