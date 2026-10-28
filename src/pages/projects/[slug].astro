@@ -1,0 +1,107 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { portfolioData, projectLinks, type Project } from "../../utils/data"
+
+export function getStaticPaths() {
+  return portfolioData.projects.map((project, i, all) => ({
+    params: { slug: project.slug },
+    props: { project, next: all[(i + 1) % all.length] },
+  }))
+}
+
+interface Props {
+  project: Project
+  next: Project
+}
+const { project, next } = Astro.props
+const links = projectLinks(project)
+
+const sections = [
+  { label: "The problem", body: project.problem },
+  { label: "What I built", list: project.built },
+  { label: "Approach", body: project.approach },
+  { label: "Evaluation", body: project.evaluation },
+  { label: "Result", body: project.result },
+].filter((s) => s.body || s.list?.length)
+---
+
+<Layout
+  title={`${project.title} | Devansh Shah`}
+  description={project.summary}
+>
+  <article class="mx-auto max-w-3xl pt-10 sm:pt-16">
+    <a href="/#work" class="text-sm text-muted hover:text-accent">← All work</a>
+
+    <p class="mt-10 font-mono text-xs uppercase tracking-wider text-accent">{project.kind}</p>
+    <h1 class="mt-3 text-3xl sm:text-5xl font-medium leading-[1.1]">{project.title}</h1>
+    <p class="mt-5 text-lg sm:text-xl text-muted">{project.summary}</p>
+
+    <div class="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-1 rounded-xl border border-line bg-tint/40 px-5 py-4">
+      <span class="font-serif text-3xl font-medium text-accent">{project.stat.value}</span>
+      <span class="text-muted">{project.stat.label}</span>
+    </div>
+
+    <dl class="mt-8 grid gap-6 border-y border-line py-6 sm:grid-cols-2 text-sm">
+      <div>
+        <dt class="font-mono text-xs uppercase tracking-wider text-muted">My role</dt>
+        <dd class="mt-1">{project.role}</dd>
+      </div>
+      <div>
+        <dt class="font-mono text-xs uppercase tracking-wider text-muted">Tech</dt>
+        <dd class="mt-1 flex flex-wrap gap-1.5">
+          {project.tech.map((t) => <span class="rounded-md bg-tint px-2 py-0.5 font-mono text-xs">{t}</span>)}
+        </dd>
+      </div>
+    </dl>
+
+    <div class="mt-10 space-y-10">
+      {
+        sections.map((s) => (
+          <section>
+            <h2 class="font-mono text-xs uppercase tracking-wider text-accent">{s.label}</h2>
+            {s.body && <p class="mt-3 text-lg">{s.body}</p>}
+            {s.list && (
+              <ul class="mt-3 space-y-2 text-lg">
+                {s.list.map((li) => (
+                  <li class="relative pl-5 before:absolute before:left-0 before:top-[0.8em] before:h-px before:w-3 before:bg-accent">
+                    {li}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))
+      }
+
+      {
+        links.length > 0 && (
+          <section>
+            <h2 class="font-mono text-xs uppercase tracking-wider text-accent">Links</h2>
+            <ul class="mt-3 flex flex-wrap gap-3">
+              {links.map((l) => (
+                <li>
+                  <a
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex rounded-full border border-line px-4 py-1.5 text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                  >
+                    {l.label} <span aria-hidden="true" class="ml-1">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </div>
+
+    <a
+      href={`/projects/${next.slug}`}
+      class="mt-16 block rounded-xl border border-line p-6 hover:border-accent/70 hover:bg-tint/50 transition-colors"
+    >
+      <span class="font-mono text-xs uppercase tracking-wider text-muted">Next project</span>
+      <span class="mt-1 block font-serif text-xl sm:text-2xl font-medium">{next.title} <span aria-hidden="true" class="text-accent">→</span></span>
+    </a>
+  </article>
+</Layout>

@@ -1,58 +1,91 @@
 ---
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import GithubIcon from "@/components/icons/GitHub.astro"
-import SocialPill from "@/components/SocialPill.astro"
-import data from "../../data.json"
+import GitHubIcon from "./icons/GitHub.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
+import MailIcon from "./icons/Mail.astro"
+import { portfolioData, formatText } from "../utils/data"
 
-const { personal, socialLinks } = data
-const personalImageAlt = personal.imageAlt
-
-// Icon mapping
-const iconMap = {
-  Mail: MailIcon,
-  LinkedIn: LinkedInIcon,
-  GitHub: GithubIcon
-}
+const { personal, socialLinks, stats } = portfolioData
+const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIcon, Mail: MailIcon }
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
+<section id="top" class="pt-14 sm:pt-24 pb-16 sm:pb-20 mx-auto max-w-5xl">
+  <div class="flex items-center gap-3 mb-8">
     <img
-      class="rounded-full shadow-lg size-16"
       src={personal.image}
-      alt={personalImageAlt}
+      alt={personal.imageAlt}
+      width="48"
+      height="48"
+      class="size-12 rounded-full object-cover ring-1 ring-line"
     />
-    <a
-      href={socialLinks.find(link => link.name === "LinkedIn")?.url}
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>{personal.title}</Badge>
-    </a>
+    <p class="font-mono text-xs sm:text-sm text-muted">{personal.affiliation}</p>
   </div>
+
   <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-  Hey, I'm {personal.name}
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-  <strong>{personal.role}</strong>. {personal.description}
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    {socialLinks.map((social) => {
-      const IconComponent = iconMap[social.icon as keyof typeof iconMap]
-      return (
-        <SocialPill href={social.url}>
-          <IconComponent class="size-4" />
-          {social.name}
-        </SocialPill>
+    class="font-serif text-[2.4rem] leading-[1.1] sm:text-6xl sm:leading-[1.06] font-medium max-w-3xl"
+    set:html={formatText(personal.headline)}
+  />
+  <p class="mt-6 text-lg sm:text-xl text-muted max-w-2xl">{personal.subheadline}</p>
+
+  <ul class="mt-6 flex flex-wrap gap-x-2 gap-y-1 font-mono text-xs text-muted" aria-label="Focus areas">
+    {
+      personal.focus.map((f, i) => (
+        <li class="flex items-center gap-2">
+          {i > 0 && <span aria-hidden="true" class="text-accent">/</span>}
+          {f}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-9 flex flex-wrap items-center gap-3">
+    <a
+      href="#work"
+      class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-paper hover:opacity-90 transition-opacity"
+    >
+      View projects <span aria-hidden="true">↓</span>
+    </a>
+    {
+      personal.resume && (
+        <a
+          href={personal.resume}
+          download
+          class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+        >
+          Resume (PDF)
+        </a>
       )
-    })}
-  </nav>
-</div>
-</div>
+    }
+    <ul class="flex items-center gap-1 sm:ml-2">
+      {
+        socialLinks.map((s) => {
+          const Icon = iconMap[s.icon]
+          return (
+            <li>
+              <a
+                href={s.url}
+                target={s.url.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                aria-label={s.name}
+                title={s.name}
+                class="grid place-items-center size-10 rounded-full text-muted hover:text-accent hover:bg-tint transition-colors"
+              >
+                <Icon class="size-5" />
+              </a>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+
+  <ul class="mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 border-t border-line pt-8" aria-label="Highlights">
+    {
+      stats.map((s) => (
+        <li>
+          <p class="font-serif text-3xl sm:text-4xl font-medium text-accent leading-none">{s.value}</p>
+          <p class="mt-2 text-sm text-muted leading-snug max-w-[15rem]">{s.label}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>

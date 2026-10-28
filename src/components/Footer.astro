@@ -1,27 +1,17 @@
 ---
-const currentYear = new Date().getFullYear()
+import data from "../../data.json"
+const year = new Date().getFullYear()
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">Devasy</a>.
-       All rights reserved
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#about-me" class="hover:underline me-4 md:me-6">About me</a>
-      </li>
-      <li>
-        <a id="contact" href="mailto:patel.devasy.23@gmail.com" class="hover:underline">Contact</a>
-      </li>
+<footer class="mt-24 border-t border-line">
+  <div class="px-5 sm:px-8">
+  <div class="mx-auto max-w-5xl py-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-muted">
+    <p>© {year} {data.personal.name}</p>
+    <ul class="flex gap-5">
+      <li><a href="/#work" class="hover:text-accent">Work</a></li>
+      <li><a href="/#about" class="hover:text-accent">About</a></li>
+      <li><a href={`mailto:${data.personal.email}`} class="hover:text-accent">Contact</a></li>
     </ul>
+  </div>
   </div>
 </footer>

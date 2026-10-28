@@ -1,0 +1,40 @@
+---
+import { portfolioData } from "../utils/data"
+const { personal, socialLinks } = portfolioData
+---
+
+<div class="max-w-2xl">
+  <p class="font-serif text-3xl sm:text-4xl font-medium leading-tight">
+    Working on LLM reliability, retrieval, or applied ML? I'd like to hear about it.
+  </p>
+  <p class="mt-5">
+    <a
+      href={`mailto:${personal.email}`}
+      class="font-mono text-lg text-accent underline underline-offset-4 decoration-accent/40 hover:decoration-accent break-all"
+    >
+      {personal.email}
+    </a>
+  </p>
+  <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+    {
+      socialLinks
+        .filter((s) => s.name !== "Email")
+        .map((s) => (
+          <li>
+            <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-muted hover:text-accent">
+              {s.name} <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+    }
+    {
+      personal.resume && (
+        <li>
+          <a href={personal.resume} download class="text-muted hover:text-accent">
+            Resume (PDF) <span aria-hidden="true">↓</span>
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</div>

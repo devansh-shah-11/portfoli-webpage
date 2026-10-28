@@ -1,5 +1,13 @@
-<h2
-	class={`flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white ${Astro.props.className}`}
->
-    <slot />
-</h2>
+---
+interface Props {
+  num: string
+  title: string
+  id?: string
+}
+const { num, title, id } = Astro.props
+---
+
+<div class="flex items-baseline gap-4 mb-10 pb-4 border-b border-line">
+  <span class="font-mono text-sm text-accent" aria-hidden="true">{num}</span>
+  <h2 id={id} class="text-3xl sm:text-4xl font-medium">{title}</h2>
+</div>
