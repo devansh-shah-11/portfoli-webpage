@@ -1,61 +1,58 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
 import TitleSection from "@/components/TitleSection.astro"
-import Education from "@/components/Education.astro" // Import the Education component
-import EducationHat from "@/components/icons/EducationHat.astro"
+import ProjectCard from "@/components/ProjectCard.astro"
+import Experience from "@/components/Experience.astro"
+import Skills from "@/components/Skills.astro"
+import About from "@/components/About.astro"
+import Contact from "@/components/Contact.astro"
+import { portfolioData } from "../utils/data"
+
+const { projects } = portfolioData
+const lead = projects.filter((p) => p.featured)
+const rest = projects.filter((p) => !p.featured)
 ---
 
 <Layout
-  title="Devasy Patel Portfolio - ML Enthusiast, GenAI, Techie"
-  description="You can find me at LinkedIn or Github"
+  title="Devansh Shah | ML & AI Engineer"
+  description="MS Computer Science at NYU Courant. I build reliable AI systems, evaluation infrastructure, and applied ML pipelines across LLM reliability, multimodal retrieval, computer vision, and GPU performance."
 >
-  <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+  <Hero />
+
+  <div class="space-y-24 sm:space-y-32">
+    <SectionContainer id="work">
+      <TitleSection num="01" title="Selected work" />
+      <div class="grid gap-5 md:grid-cols-2">
+        {lead.map((p) => <ProjectCard project={p} large />)}
+      </div>
+      <h3 class="mt-14 mb-5 font-mono text-xs uppercase tracking-wider text-muted">
+        Research &amp; open source
+      </h3>
+      <div class="grid gap-5 md:grid-cols-2">
+        {rest.map((p) => <ProjectCard project={p} />)}
+      </div>
     </SectionContainer>
-    <div class="space-y-24">
+
     <SectionContainer id="experience">
-      <TitleSection>
-        <Briefcase class="size-8" />
-        Experience
-      </TitleSection>
+      <TitleSection num="02" title="Experience" />
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="projects">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        Projects
-      </TitleSection>
-      <Projects />
+    <SectionContainer id="skills">
+      <TitleSection num="03" title="Skills" />
+      <Skills />
     </SectionContainer>
 
-    <SectionContainer id="education"> <!-- Add the Education section here -->
-      <TitleSection>
-        <EducationHat class="size-8" />
-        Education
-      </TitleSection>
-      <Education />
+    <SectionContainer id="about">
+      <TitleSection num="04" title="About" />
+      <About />
     </SectionContainer>
 
-    <SectionContainer id="about-me">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        About Me
-    </TitleSection>
-      <AboutMe />
+    <SectionContainer id="contact">
+      <TitleSection num="05" title="Contact" />
+      <Contact />
     </SectionContainer>
   </div>
-  </main>
 </Layout>
