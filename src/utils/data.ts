@@ -29,14 +29,13 @@ export interface PortfolioData {
   personal: {
     name: string
     affiliation: string
-    headline: string
     subheadline: string
-    focus: string[]
     image: string
     imageAlt: string
     aboutImage: string
     aboutImageAlt: string
     email: string
+    /** Path under public/ (e.g. "/resume.pdf"). Leave empty until the PDF exists. */
     resume?: string
   }
   socialLinks: { name: string; url: string; icon: string }[]

@@ -2,20 +2,13 @@
   "personal": {
     "name": "Devansh Shah",
     "affiliation": "MS Computer Science · NYU Courant",
-    "headline": "I build **reliable AI systems**, evaluation infrastructure, and applied ML pipelines.",
-    "subheadline": "MSCS at NYU, working across LLM reliability, multimodal retrieval, computer vision, and GPU performance.",
-    "focus": [
-      "LLM reliability",
-      "Multimodal retrieval",
-      "Computer vision",
-      "GPU performance"
-    ],
+    "subheadline": "Building and evaluating production ML systems across speech, retrieval, vision, and GPU performance.",
     "image": "/avatar.webp",
     "imageAlt": "Portrait of Devansh Shah",
     "aboutImage": "/about.webp",
     "aboutImageAlt": "Devansh Shah in a navy suit, smiling",
     "email": "dns5508@nyu.edu",
-    "resume": ""
+    "resume": "/Devansh_Resume_2026.pdf"
   },
   "socialLinks": [
     {
@@ -335,6 +328,8 @@
       "group": "Languages & tools",
       "items": [
         "Python",
+        "SQL",
+        "C++",
         "PyTorch",
         "TensorFlow",
         "Hugging Face",
@@ -342,12 +337,21 @@
         "Streamlit",
         "Weaviate"
       ]
+    },
+    {
+      "group": "Cloud & infrastructure",
+      "items": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "GitHub"
+      ]
     }
   ],
   "about": [
-    "I'm an MS Computer Science student at NYU Courant focused on reliable AI systems, multimodal retrieval, computer vision, and GPU performance.",
-    "My work spans production ML systems, LLM evaluation infrastructure, and research into robustness and performance. I enjoy building systems where model quality, reliability, and practical constraints all matter.",
-    "I'm especially interested in technology that is useful at scale, from multilingual speech translation to tools that make AI systems easier to evaluate and trust."
+    "I care about what happens beyond the model.",
+    "My focus is building machine learning systems that remain useful under real-world constraints. That means thinking beyond model accuracy: how data moves through a pipeline, how quality is evaluated, where latency comes from, and how a system behaves when inputs are imperfect.",
+    "Through production AI projects and systems-oriented research at NYU, I've worked across multilingual speech, retrieval, computer vision, and GPU performance modeling. I enjoy the engineering work that connects model capabilities to reliable, measurable system behavior."
   ],
   "education": [
     {
@@ -368,7 +372,16 @@
     {
       "date": "2020 – 2024",
       "degree": "B.Tech. Computer Science and Engineering",
-      "institution": "Nirma University Institute of Technology"
+      "institution": "Nirma University Institute of Technology",
+      "coursework": [
+        "Information Retrieval Systems",
+        "Data Mining",
+        "Database Management Systems",
+        "Compiler Construction",
+        "Probability and Statistics",
+        "Ethical Hacking and Vulnerability Assessment",
+        "Big Data Analytics"
+      ]
     }
   ]
 }

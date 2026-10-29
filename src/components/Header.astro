@@ -2,12 +2,14 @@
 import ThemeToggle from "./ThemeToggle.astro"
 import data from "../../data.json"
 
+const resume = data.personal.resume
+
 const navItems = [
   { title: "Projects", id: "projects" },
   { title: "Experience", id: "experience" },
+  { title: "About", id: "about" },
   { title: "Skills", id: "skills" },
   { title: "Education", id: "education" },
-  { title: "About", id: "about" },
   { title: "Contact", id: "contact" },
 ]
 ---
@@ -32,6 +34,21 @@ const navItems = [
           ))
         }
       </ul>
+      {
+        resume ? (
+          <a href={resume} download class="px-2.5 py-1.5 rounded-md border border-line text-xs text-muted hover:text-accent hover:border-accent transition-colors">
+            Resume
+          </a>
+        ) : (
+          <span
+            class="px-2.5 py-1.5 rounded-md border border-dashed border-line text-xs text-muted/70 cursor-not-allowed"
+            title="Placeholder: set personal.resume in data.json"
+            aria-disabled="true"
+          >
+            Resume
+          </span>
+        )
+      }
       <ThemeToggle />
     </nav>
   </div>

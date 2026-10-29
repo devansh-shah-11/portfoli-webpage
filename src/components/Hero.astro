@@ -2,60 +2,48 @@
 import GitHubIcon from "./icons/GitHub.astro"
 import LinkedInIcon from "./icons/LinkedIn.astro"
 import MailIcon from "./icons/Mail.astro"
-import { portfolioData, formatText } from "../utils/data"
+import { portfolioData } from "../utils/data"
 
 const { personal, socialLinks } = portfolioData
 const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIcon, Mail: MailIcon }
+const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium min-h-11"
 ---
 
-<section id="top" class="pt-14 sm:pt-24 pb-16 sm:pb-20 mx-auto max-w-5xl">
-  <div class="flex items-center gap-3 mb-8">
+<section id="top" class="pt-8 sm:pt-16 pb-12 sm:pb-16 mx-auto max-w-5xl">
+  <div class="flex items-center gap-4">
     <img
       src={personal.image}
       alt={personal.imageAlt}
-      width="48"
-      height="48"
-      class="size-12 rounded-full object-cover ring-1 ring-line"
+      width="64"
+      height="64"
+      class="size-14 sm:size-16 rounded-full object-cover ring-1 ring-line"
     />
-    <p class="font-mono text-xs sm:text-sm text-muted">{personal.affiliation}</p>
+    <div>
+      <p class="font-mono text-xs sm:text-sm text-ink">{personal.affiliation}</p>
+      <p class="mt-1 max-w-xl text-sm sm:text-base text-muted">{personal.subheadline}</p>
+    </div>
   </div>
 
-  <h1
-    class="font-serif text-[2.4rem] leading-[1.1] sm:text-6xl sm:leading-[1.06] font-medium max-w-3xl"
-    set:html={formatText(personal.headline)}
-  />
-  <p class="mt-6 text-lg sm:text-xl text-muted max-w-2xl">{personal.subheadline}</p>
-
-  <ul class="mt-6 flex flex-wrap gap-x-2 gap-y-1 font-mono text-xs text-muted" aria-label="Focus areas">
-    {
-      personal.focus.map((f, i) => (
-        <li class="flex items-center gap-2">
-          {i > 0 && <span aria-hidden="true" class="text-accent">/</span>}
-          {f}
-        </li>
-      ))
-    }
-  </ul>
-
-  <div class="mt-9 flex flex-wrap items-center gap-3">
-    <a
-      href="#projects"
-      class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-paper hover:opacity-90 transition-opacity"
-    >
-      View projects <span aria-hidden="true">↓</span>
+  <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3">
+    <a href="#projects" class={`${btn} bg-accent text-paper hover:opacity-90 transition-opacity`}>
+      View Projects <span aria-hidden="true">↓</span>
     </a>
     {
-      personal.resume && (
-        <a
-          href={personal.resume}
-          download
-          class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium hover:border-accent hover:text-accent transition-colors"
-        >
-          Resume (PDF)
+      personal.resume ? (
+        <a href={personal.resume} download class={`${btn} border border-line hover:border-accent hover:text-accent transition-colors`}>
+          Resume PDF
         </a>
+      ) : (
+        <span
+          class={`${btn} border border-dashed border-line text-muted cursor-not-allowed`}
+          aria-disabled="true"
+          title="Placeholder: set personal.resume in data.json once the PDF is in public/"
+        >
+          Resume PDF <span class="font-mono text-[0.65rem] uppercase tracking-wider">soon</span>
+        </span>
       )
     }
-    <ul class="flex items-center gap-1 sm:ml-2">
+    <ul class="flex flex-wrap items-center gap-x-1 sm:ml-3">
       {
         socialLinks.map((s) => {
           const Icon = iconMap[s.icon]
@@ -65,11 +53,10 @@ const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIco
                 href={s.url}
                 target={s.url.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                aria-label={s.name}
-                title={s.name}
-                class="grid place-items-center size-10 rounded-full text-muted hover:text-accent hover:bg-tint transition-colors"
+                class="inline-flex items-center gap-2 min-h-11 px-3 rounded-full text-sm text-muted hover:text-accent hover:bg-tint transition-colors"
               >
-                <Icon class="size-5" />
+                <Icon class="size-4" />
+                {s.name}
               </a>
             </li>
           )
@@ -77,6 +64,4 @@ const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIco
       }
     </ul>
   </div>
-
-
 </section>
