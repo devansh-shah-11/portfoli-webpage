@@ -52,7 +52,7 @@
       ],
       "approach": "The pipeline combines speech recognition, alignment and translation components built around Whisper and NVIDIA NeMo.",
       "evaluation": "An evaluation loop combining synthetic examples, human review, baseline comparisons, and an LLM judge that flagged domain-vocabulary errors for review and retraining.",
-      "result": "The broader product supports eight languages and has reached 1.2M+ users across 190+ countries. This is product-wide reach, not attributable to my work alone.",
+      "result": "The broader product supports eight languages and has reached 1.2M+ users across 190+ countries",
       "tech": [
         "Python",
         "Whisper",
@@ -84,7 +84,7 @@
       "approach": "Hybrid retrieval using Voyage embeddings, Weaviate and BM25, with an in-house timestamping model and an LLM reranking stage.",
       "result": "The system serves 10,000+ monthly users with under 1.5-second median end-to-end latency.",
       "tech": [
-        "Voyage embeddings",
+        "Embeddings",
         "Weaviate",
         "BM25",
         "LLM reranking"
