@@ -7,10 +7,10 @@ const { skills } = portfolioData
   {
     skills.map((g) => (
       <div>
-        <h3 class="font-mono text-xs uppercase tracking-wider text-accent">{g.group}</h3>
+        <h3 class="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">{g.group}</h3>
         <ul class="mt-3 flex flex-wrap gap-x-1.5 gap-y-2">
           {g.items.map((i) => (
-            <li class="rounded-md border border-line px-2.5 py-1 text-sm">{i}</li>
+            <li class="rounded-md border border-line px-2.5 py-1 text-[0.95rem]">{i}</li>
           ))}
         </ul>
       </div>

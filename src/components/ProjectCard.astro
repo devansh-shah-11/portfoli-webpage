@@ -1,56 +1,82 @@
 ---
-import { projectLinks, type Project } from "../utils/data"
+import { type Project } from "../utils/data"
 
 interface Props {
   project: Project
-  large?: boolean
 }
-const { project, large = false } = Astro.props
-const links = projectLinks(project)
+const { project } = Astro.props
+const featured = Boolean(project.featured)
 ---
 
-<article
-  class="group relative flex flex-col md:[&:last-child:nth-child(odd)]:col-span-2 rounded-xl border border-line p-6 sm:p-7 transition-colors hover:border-accent/70 hover:bg-tint/50"
->
-  <p class="font-mono text-xs uppercase tracking-wider text-accent">{project.kind}</p>
+<article class={`flex h-full flex-col rounded-2xl border border-line bg-paper transition-colors hover:border-accent/60 ${featured ? "p-6 sm:p-9" : "p-6"}`}>
+  {project.stat && !featured && (
+    <div class="flex justify-end">
+      <span class="shrink-0 rounded-full bg-tint px-2.5 py-1 font-mono text-[0.8125rem] text-accent">
+        {project.stat.value}
+      </span>
+    </div>
+  )}
 
-  <h3 class={`mt-3 font-medium leading-snug ${large ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
-    <a href={`/projects/${project.slug}`} class="after:absolute after:inset-0 after:rounded-xl focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-accent">
-      {project.title}
-    </a>
+  <h3 class={`${project.stat && !featured ? "mt-3" : ""} font-medium leading-snug ${featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
+    {project.title}
   </h3>
-  <p class="mt-3 text-muted">{project.summary}</p>
+  <p class="mt-3 text-[1.05rem] text-muted leading-relaxed">{project.summary}</p>
 
-  <div class="mt-auto pt-6">
-  <div class="flex items-baseline gap-3 border-t border-line pt-5">
-    <span class="font-serif text-2xl font-medium text-accent whitespace-nowrap">{project.stat.value}</span>
-    <span class="text-sm text-muted leading-snug">{project.stat.label}</span>
-  </div>
+  {featured && project.stat && (
+    <div class="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-y border-line py-4">
+      <span class="font-serif text-3xl sm:text-4xl font-medium leading-none text-accent">{project.stat.value}</span>
+      <span class="max-w-md text-base leading-snug text-muted">{project.stat.label}</span>
+    </div>
+  )}
 
-  <ul class="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">
-    {
-      project.tech.map((t) => (
-        <li class="rounded-md bg-tint px-2 py-0.5 font-mono text-[0.7rem] text-ink/80">{t}</li>
-      ))
-    }
-  </ul>
+  {featured && project.flow && project.flow.length > 0 && (
+    <div class="mt-5 rounded-xl bg-tint/55 p-3 sm:p-4">
+      <p class="mb-3 font-mono text-sm uppercase tracking-wider text-muted">System flow</p>
+      <ol class="flex flex-wrap items-center gap-x-2 gap-y-2" aria-label={`${project.title} system flow`}>
+        {project.flow.map((step, i) => (
+          <li class="flex items-center gap-2">
+            <span class="rounded-md border border-line/80 bg-paper px-2.5 py-1.5 text-[0.95rem] sm:text-base">{step}</span>
+            {i < (project.flow?.length ?? 0) - 1 && <span aria-hidden="true" class="text-accent">→</span>}
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
 
-  <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
-    <span class="text-accent transition-transform group-hover:translate-x-0.5">
-      Case study <span aria-hidden="true">→</span>
-    </span>
-    {
-      links.map((l) => (
-        <a
-          href={l.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="relative z-10 text-muted hover:text-accent underline-offset-4 hover:underline"
-        >
-          {l.label} <span aria-hidden="true">↗</span>
-        </a>
-      ))
-    }
-  </div>
+  {featured && project.approach && (
+    <div class="mt-5">
+      <h4 class="font-mono text-sm uppercase tracking-wider text-muted">Technical approach</h4>
+      <p class="mt-2 text-lg leading-relaxed">{project.approach}</p>
+    </div>
+  )}
+
+  {project.built && project.built.length > 0 && (
+    <div class="mt-5">
+      {featured && <h4 class="font-mono text-sm uppercase tracking-wider text-muted">Engineering details</h4>}
+      <ul class={`${featured ? "mt-2" : "mt-3"} space-y-2.5 text-lg leading-relaxed text-muted`}>
+        {project.built.map((item) => (
+          <li class="relative pl-4 before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-2 before:bg-accent/80">{item}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {featured && project.evaluation && (
+    <p class="mt-4 border-l-2 border-accent/50 pl-3 text-lg leading-relaxed text-muted">{project.evaluation}</p>
+  )}
+
+  {project.result && featured && (
+    <p class="mt-4 text-lg leading-relaxed">{project.result}</p>
+  )}
+
+  <div class="mt-auto pt-5">
+    {project.stat && !featured && (
+      <p class="border-t border-line pt-3 text-base text-muted">{project.stat.label}</p>
+    )}
+    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies and methods">
+      {project.tech.map((tech) => (
+        <li class="rounded-md bg-tint px-2 py-1 font-mono text-[0.8125rem] text-ink/80">{tech}</li>
+      ))}
+    </ul>
   </div>
 </article>

@@ -4,50 +4,54 @@ import Hero from "@/components/Hero.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
+import CompactProject from "@/components/CompactProject.astro"
 import Experience from "@/components/Experience.astro"
 import Skills from "@/components/Skills.astro"
-import About from "@/components/About.astro"
+import Education from "@/components/Education.astro"
 import Contact from "@/components/Contact.astro"
 import { portfolioData } from "../utils/data"
 
-const { projects } = portfolioData
-const lead = projects.filter((p) => p.featured)
-const rest = projects.filter((p) => !p.featured)
+const featured = portfolioData.projects.filter((p) => p.featured)
+const moreProjects = portfolioData.projects.filter((p) => !p.featured)
 ---
 
 <Layout
-  title="Devansh Shah | ML & AI Engineer"
-  description="MS Computer Science at NYU Courant. I build reliable AI systems, evaluation infrastructure, and applied ML pipelines across LLM reliability, multimodal retrieval, computer vision, and GPU performance."
+  title="Devansh Shah | AI/ML Engineer"
+  description="MS Computer Science at NYU Courant. Building production AI systems, multimodal retrieval, computer vision pipelines, LLM reasoning research, and GPU performance models."
 >
   <Hero />
 
-  <div class="space-y-24 sm:space-y-32">
-    <SectionContainer id="work">
-      <TitleSection num="01" title="Selected work" />
-      <div class="grid gap-5 md:grid-cols-2">
-        {lead.map((p) => <ProjectCard project={p} large />)}
+  <div class="space-y-16 sm:space-y-24">
+    <SectionContainer id="projects">
+      <TitleSection num="01" title="Projects" />
+      <p class="mb-8 max-w-3xl text-muted">Selected work across production AI, retrieval systems, computer vision, and GPU performance. Technical approaches and results are shown inline.</p>
+      <div class="grid items-stretch gap-5 xl:grid-cols-2">
+        {featured.map((project) => <ProjectCard project={project} />)}
       </div>
-      <h3 class="mt-14 mb-5 font-mono text-xs uppercase tracking-wider text-muted">
-        Research &amp; open source
-      </h3>
-      <div class="grid gap-5 md:grid-cols-2">
-        {rest.map((p) => <ProjectCard project={p} />)}
-      </div>
+
+      {moreProjects.length > 0 && (
+        <div class="mt-12">
+          <div>
+            {moreProjects.map((project) => <CompactProject project={project} />)}
+          </div>
+        </div>
+      )}
     </SectionContainer>
 
     <SectionContainer id="experience">
       <TitleSection num="02" title="Experience" />
+      <p class="mb-8 max-w-3xl text-muted">Professional work combining implementation details, evaluation results, and the problems each system was designed to solve.</p>
       <Experience />
     </SectionContainer>
 
     <SectionContainer id="skills">
-      <TitleSection num="03" title="Skills" />
+      <TitleSection num="03" title="Technical skills" />
       <Skills />
     </SectionContainer>
 
-    <SectionContainer id="about">
-      <TitleSection num="04" title="About" />
-      <About />
+    <SectionContainer id="education">
+      <TitleSection num="04" title="Education" />
+      <Education />
     </SectionContainer>
 
     <SectionContainer id="contact">

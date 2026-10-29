@@ -5,11 +5,12 @@ const year = new Date().getFullYear()
 
 <footer class="mt-24 border-t border-line">
   <div class="px-5 sm:px-8">
-  <div class="mx-auto max-w-5xl py-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-muted">
+  <div class="mx-auto max-w-6xl py-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-muted">
     <p>© {year} {data.personal.name}</p>
     <ul class="flex gap-5">
-      <li><a href="/#work" class="hover:text-accent">Work</a></li>
-      <li><a href="/#about" class="hover:text-accent">About</a></li>
+      <li><a href="/#projects" class="hover:text-accent">Projects</a></li>
+      <li><a href="/#experience" class="hover:text-accent">Experience</a></li>
+      <li><a href="/#education" class="hover:text-accent">Education</a></li>
       <li><a href={`mailto:${data.personal.email}`} class="hover:text-accent">Contact</a></li>
     </ul>
   </div>

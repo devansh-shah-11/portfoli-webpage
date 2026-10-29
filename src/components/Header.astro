@@ -2,18 +2,20 @@
 import ThemeToggle from "./ThemeToggle.astro"
 import data from "../../data.json"
 
+const resume = data.personal.resume
+
 const navItems = [
-  { title: "Work", id: "work" },
+  { title: "Projects", id: "projects" },
   { title: "Experience", id: "experience" },
   { title: "Skills", id: "skills" },
-  { title: "About", id: "about" },
+  { title: "Education", id: "education" },
   { title: "Contact", id: "contact" },
 ]
 ---
 
 <header class="sticky top-0 z-20 border-b border-line bg-paper/85 backdrop-blur">
-  <div class="px-5 sm:px-8">
-  <div class="mx-auto max-w-5xl h-14 flex items-center justify-between gap-4">
+  <div class="px-4 sm:px-6">
+  <div class="mx-auto max-w-6xl h-14 flex items-center justify-between gap-4">
     <a href="/" class="font-serif text-lg font-medium shrink-0">{data.personal.name}</a>
     <nav aria-label="Primary" class="flex items-center gap-1 sm:gap-2 text-sm">
       <ul class="hidden md:flex items-center gap-1">
@@ -31,13 +33,28 @@ const navItems = [
           ))
         }
       </ul>
+      {
+        resume ? (
+          <a href={resume} download class="px-2.5 py-1.5 rounded-md border border-line text-xs text-muted hover:text-accent hover:border-accent transition-colors">
+            Resume
+          </a>
+        ) : (
+          <span
+            class="px-2.5 py-1.5 rounded-md border border-dashed border-line text-xs text-muted/70 cursor-not-allowed"
+            title="Placeholder: set personal.resume in data.json"
+            aria-disabled="true"
+          >
+            Resume
+          </span>
+        )
+      }
       <ThemeToggle />
     </nav>
   </div>
   </div>
   <!-- Compact nav for small screens -->
   <nav aria-label="Sections" class="md:hidden border-t border-line/60">
-    <ul class="mx-auto max-w-5xl px-4 flex gap-1 overflow-x-auto text-sm">
+    <ul class="mx-auto max-w-6xl px-4 flex gap-1 overflow-x-auto text-sm">
       {
         navItems.map((item) => (
           <li class="shrink-0">
