@@ -1,7 +1,7 @@
 # Redesign implementation notes
 
 ## Included
-- Reworked the homepage hierarchy around Projects, Experience, Technical Skills, Education, About, and Contact.
+- Reworked the homepage hierarchy around Projects, Experience, Technical Skills, Education, and Contact.
 - Featured SRMD, Wisdom, drone obstacle avoidance, and CUDA kernel prediction in that order.
 - Kept face recognition, Prompt Invariant Training, and crowd-risk detection in a compact list directly below featured projects.
 - Removed LitmusAI from Projects and retained it under Experience.
