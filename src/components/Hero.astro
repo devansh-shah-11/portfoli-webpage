@@ -7,10 +7,10 @@ import { portfolioData } from "../utils/data"
 const { personal, socialLinks, about } = portfolioData
 const [lead, ...rest] = about
 const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIcon, Mail: MailIcon }
-const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium min-h-11"
+const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[0.95rem] font-medium min-h-11"
 ---
 
-<section id="top" class="pt-8 sm:pt-16 pb-12 sm:pb-16 mx-auto max-w-5xl">
+<section id="top" class="pt-8 sm:pt-16 pb-12 sm:pb-16 mx-auto max-w-6xl">
   <div class="grid items-start gap-6 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10">
     <img
       src={personal.aboutImage}
@@ -20,7 +20,7 @@ const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm fon
       class="w-32 md:w-full rounded-xl object-cover aspect-[4/5] ring-1 ring-line"
     />
     <div>
-      <p class="font-mono text-xs sm:text-sm text-accent">{personal.affiliation}</p>
+      <p class="font-mono text-[0.8125rem] sm:text-[0.95rem] text-accent">{personal.affiliation}</p>
       <p class="mt-3 font-serif text-2xl sm:text-3xl leading-snug text-ink max-w-2xl">{lead}</p>
       <div class="mt-4 max-w-2xl space-y-3 text-base sm:text-lg leading-relaxed text-muted">
         {rest.map((p) => <p>{p}</p>)}
@@ -40,7 +40,7 @@ const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm fon
           aria-disabled="true"
           title="Placeholder: set personal.resume in data.json once the PDF is in public/"
         >
-          Resume PDF <span class="font-mono text-[0.65rem] uppercase tracking-wider">soon</span>
+          Resume PDF <span class="font-mono text-xs uppercase tracking-wider">soon</span>
         </span>
       )
     }
@@ -54,7 +54,7 @@ const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm fon
                 href={s.url}
                 target={s.url.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 min-h-11 px-3 rounded-full text-sm text-muted hover:text-accent hover:bg-tint transition-colors"
+                class="inline-flex items-center gap-2 min-h-11 px-3 rounded-full text-[0.95rem] text-muted hover:text-accent hover:bg-tint transition-colors"
               >
                 <Icon class="size-4" />
                 {s.name}

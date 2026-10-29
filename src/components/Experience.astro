@@ -8,20 +8,20 @@ const { experiences } = portfolioData
     <article class="rounded-2xl border border-line p-5 sm:p-7 lg:p-8">
       <div class="grid gap-4 sm:grid-cols-[minmax(12rem,0.34fr)_minmax(0,1fr)] sm:gap-8">
         <header>
-          <p class="font-mono text-xs text-muted">{e.date}</p>
+          <p class="font-mono text-[0.8125rem] text-muted">{e.date}</p>
           <h3 class="mt-2 text-2xl font-medium leading-snug">{e.company}</h3>
-          <p class="mt-1 text-sm font-medium text-accent">{e.title}</p>
+          <p class="mt-1 text-[0.95rem] font-medium text-accent">{e.title}</p>
         </header>
         <div>
           {e.summary && <p class="text-base leading-relaxed">{e.summary}</p>}
-          <ul class="mt-4 space-y-3 text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+          <ul class="mt-4 space-y-3 text-[0.95rem] leading-relaxed text-muted sm:text-base">
             {e.bullets.map((bullet) => (
               <li class="relative pl-5 before:absolute before:left-0 before:top-[0.72em] before:h-px before:w-2.5 before:bg-accent">{bullet}</li>
             ))}
           </ul>
           {e.tech && e.tech.length > 0 && (
             <ul class="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">
-              {e.tech.map((tech) => <li class="rounded-md bg-tint px-2 py-1 font-mono text-[0.67rem] text-ink/80">{tech}</li>)}
+              {e.tech.map((tech) => <li class="rounded-md bg-tint px-2 py-1 font-mono text-xs text-ink/80">{tech}</li>)}
             </ul>
           )}
         </div>
