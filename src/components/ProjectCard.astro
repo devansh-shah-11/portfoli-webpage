@@ -36,7 +36,7 @@ const featured = Boolean(project.featured)
         {project.flow.map((step, i) => (
           <li class="flex items-center gap-2">
             <span class="rounded-md border border-line/80 bg-paper px-2.5 py-1.5 text-[0.95rem] sm:text-base">{step}</span>
-            {i < project.flow.length - 1 && <span aria-hidden="true" class="text-accent">→</span>}
+            {i < (project.flow?.length ?? 0) - 1 && <span aria-hidden="true" class="text-accent">→</span>}
           </li>
         ))}
       </ol>
