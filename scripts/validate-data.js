@@ -9,16 +9,15 @@ const data = JSON.parse(fs.readFileSync(path.join(root, "data.json"), "utf8"))
 let problems = 0
 const warn = (msg) => { problems++; console.log(`  ! ${msg}`) }
 
-for (const k of ["settings", "personal", "socialLinks", "stats", "projects", "experiences", "skills", "about", "education"]) {
+for (const k of ["personal", "socialLinks", "projects", "experiences", "skills", "about", "education"]) {
   if (!data[k]) warn(`missing section: ${k}`)
 }
 
 const slugs = new Set()
 for (const p of data.projects ?? []) {
-  for (const f of ["slug", "title", "kind", "summary", "stat", "role", "tech"]) if (!p[f]) warn(`${p.slug ?? p.title}: missing ${f}`)
+  for (const f of ["slug", "title", "kind", "summary", "stat", "tech"]) if (!p[f]) warn(`${p.slug ?? p.title}: missing ${f}`)
   if (slugs.has(p.slug)) warn(`duplicate slug: ${p.slug}`)
   slugs.add(p.slug)
-  for (const l of p.links ?? []) if (!l.label || !/^https?:\/\//.test(l.url ?? "")) warn(`${p.slug}: bad link ${JSON.stringify(l)}`)
 }
 for (const e of data.experiences ?? []) {
   if (!e.bullets?.length) warn(`${e.company}: no bullets`)

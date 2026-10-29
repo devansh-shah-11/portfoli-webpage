@@ -1,14 +1,31 @@
-# Devansh Shah, portfolio
+# Devansh Shah Portfolio
 
-Personal site built with [Astro](https://astro.build) and Tailwind CSS. Live at https://devansh-shah.netlify.app/
+Personal portfolio built with Astro and Tailwind CSS.
 
-All content is in `data.json`; see [PORTFOLIO_DATA_GUIDE.md](./PORTFOLIO_DATA_GUIDE.md) for how to edit it
-(projects, project links, resume, accent color).
+## Run locally
 
 ```bash
 npm install
-npm run dev       # http://localhost:4321
-npm run build     # type-check + production build into dist/
+npm run validate-data
+npm run dev
 ```
 
-Based on the open-source [porfolio.dev](https://github.com/midudev/porfolio.dev) template; see LICENSE.md.
+Build and type-check:
+
+```bash
+npm run build
+```
+
+## Recent redesign
+
+- Four featured projects are shown as expanded cards with technical details and system-flow diagrams where useful.
+- Remaining projects appear in a compact list immediately below the featured cards.
+- Project details are available directly on the homepage rather than behind case-study links.
+- Experience uses larger stacked cards with concise summaries, implementation-focused bullets, and technology tags.
+- Added a dedicated Education section with verified NYU coursework.
+- Added section navigation for Projects, Experience, Skills, Education, About, and Contact.
+- Resume link remains intentionally unset until the PDF is supplied.
+
+All portfolio copy is maintained in `data.json`. See `PORTFOLIO_DATA_GUIDE.md` for the supported fields and editing instructions.
+
+The site is based on the open-source [porfolio.dev](https://github.com/midudev/porfolio.dev) template. See `LICENSE.md`.

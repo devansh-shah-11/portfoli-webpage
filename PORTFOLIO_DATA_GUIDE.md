@@ -1,36 +1,52 @@
 # Editing your portfolio
 
-All content lives in `data.json`. Run `npm run validate-data` after editing.
-
-## Turning links on/off
-
-Project link buttons ("GitHub ↗" etc.) come from each project's `links` array.
-
-- **Hide every project link at once:** set `"settings": { "showProjectLinks": false }`.
-- **Remove one link:** delete its `{ "label": ..., "url": ... }` entry.
-- **Point one at the right repo:** change its `url`.
-- **Add one:** add `{ "label": "Demo", "url": "https://..." }` to the array.
-
-Links with an empty `links: []` simply don't render. The "Case study" link is always shown.
-
-## Resume button
-
-Put your PDF in `public/` (e.g. `public/resume.pdf`) and set `personal.resume` to `"/resume.pdf"`.
-Leave it as `""` and the button is hidden in both the hero and the contact section.
+Portfolio content lives in `data.json`.
 
 ## Projects
 
-Each project becomes a card and a page at `/projects/<slug>`. Case-study sections
-(`problem`, `built`, `approach`, `evaluation`, `result`) are all optional: leave one out
-and it won't appear. Set `"featured": true` to place a project in the large top row.
-`kind` is a label: "Production", "Research" or "Open source".
+The homepage displays four featured projects in the order marked by `"featured": true`:
+1. SRMD Multilingual Speech Translation
+2. Wisdom Multimodal Search and RAG
+3. Drone Obstacle Avoidance with Selective VLM Reasoning
+4. LLM-Assisted CUDA Kernel Performance Prediction
 
-## Colors and fonts
+Other projects appear in a compact list below the featured cards. All project summaries, technical details, metrics, and technology tags are visible on the homepage; the cards do not require a case-study click-through.
 
-Edit the RGB triplets in `src/styles/global.css` (`--c-accent` is the single accent color).
+Project content fields:
+- `summary`: concise description of the project
+- `stat`: primary metric and its label
+- `approach`: technical approach paragraph
+- `built`: list of implementation details
+- `evaluation`: evaluation method or context, when useful
+- `result`: supporting result or interpretation
+- `flow`: optional sequence of stages for the small system-flow diagram
+- `tech`: technology and method tags
 
-## Commands
+Set `"featured": true` to show a project as an expanded card. Keep the featured project order in `data.json`.
 
-    npm install
-    npm run dev       # local dev server
-    npm run build     # type-check + production build into dist/
+## Experience
+
+Each entry in `experiences` supports:
+- `date`, `title`, and `company`
+- `summary`: short overview of the work
+- `bullets`: technical implementation and outcomes, written as complete, scannable bullets
+- `tech`: compact technology tags
+
+LitmusAI belongs in Experience, not Projects.
+
+## Resume
+
+When the PDF is ready, place it in `public/` (for example `public/resume.pdf`) and set `personal.resume` to `"/resume.pdf"`. The resume link is hidden while this field is empty.
+
+## Education
+
+Education entries support an optional `coursework` array. Only add course names that you have verified.
+
+## Local development
+
+```bash
+npm install
+npm run validate-data
+npm run dev
+npm run build
+```

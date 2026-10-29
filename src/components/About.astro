@@ -1,33 +1,18 @@
 ---
 import { portfolioData } from "../utils/data"
-const { personal, about, education } = portfolioData
+const { personal, about } = portfolioData
 ---
 
-<div class="grid gap-10 md:grid-cols-[1fr_16rem] md:gap-14 items-start">
-  <div>
-    <div class="space-y-4 text-lg text-muted max-w-2xl">
-      {about.map((p) => <p>{p}</p>)}
-    </div>
-
-    <h3 class="mt-12 font-mono text-xs uppercase tracking-wider text-accent">Education</h3>
-    <ul class="mt-4 grid gap-6 sm:grid-cols-2">
-      {
-        education.map((e) => (
-          <li class="border-l-2 border-accent/60 pl-4">
-            <p class="font-mono text-xs text-muted">{e.date}</p>
-            <p class="mt-1 font-medium leading-snug">{e.degree}</p>
-            <p class="text-sm text-muted">{e.institution}</p>
-          </li>
-        ))
-      }
-    </ul>
+<div class="grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_15rem] md:gap-12">
+  <div class="max-w-3xl space-y-4 text-base leading-relaxed text-muted sm:text-lg">
+    {about.map((paragraph) => <p>{paragraph}</p>)}
   </div>
-
   <img
     src={personal.aboutImage}
     alt={personal.aboutImageAlt}
     width="356"
     height="450"
-    class="order-first md:order-none w-48 md:w-full rounded-xl object-cover aspect-[4/5] ring-1 ring-line"
+    loading="lazy"
+    class="order-first w-36 rounded-xl object-cover aspect-[4/5] ring-1 ring-line md:order-none md:w-full"
   />
 </div>
