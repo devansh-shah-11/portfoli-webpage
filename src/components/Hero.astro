@@ -4,27 +4,28 @@ import LinkedInIcon from "./icons/LinkedIn.astro"
 import MailIcon from "./icons/Mail.astro"
 import { portfolioData } from "../utils/data"
 
-const { personal, socialLinks } = portfolioData
+const { personal, socialLinks, about } = portfolioData
+const [lead, ...rest] = about
 const iconMap: Record<string, any> = { GitHub: GitHubIcon, LinkedIn: LinkedInIcon, Mail: MailIcon }
 const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium min-h-11"
 ---
 
 <section id="top" class="pt-8 sm:pt-16 pb-12 sm:pb-16 mx-auto max-w-5xl">
-  <div class="flex items-center gap-4">
+  <div class="grid items-start gap-6 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10">
     <img
-      src={personal.image}
-      alt={personal.imageAlt}
-      width="64"
-      height="64"
-      class="size-14 sm:size-16 rounded-full object-cover ring-1 ring-line"
+      src={personal.aboutImage}
+      alt={personal.aboutImageAlt}
+      width="356"
+      height="450"
+      class="w-32 md:w-full rounded-xl object-cover aspect-[4/5] ring-1 ring-line"
     />
     <div>
-      <p class="font-mono text-xs sm:text-sm text-ink">{personal.affiliation}</p>
-      <p class="mt-1 max-w-xl text-sm sm:text-base text-muted">{personal.subheadline}</p>
-    </div>
-  </div>
-
-  <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3">
+      <p class="font-mono text-xs sm:text-sm text-accent">{personal.affiliation}</p>
+      <p class="mt-3 font-serif text-2xl sm:text-3xl leading-snug text-ink max-w-2xl">{lead}</p>
+      <div class="mt-4 max-w-2xl space-y-3 text-base sm:text-lg leading-relaxed text-muted">
+        {rest.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3">
     <a href="#projects" class={`${btn} bg-accent text-paper hover:opacity-90 transition-opacity`}>
       View Projects <span aria-hidden="true">↓</span>
     </a>
@@ -63,5 +64,7 @@ const btn = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm fon
         })
       }
     </ul>
+  </div>
+    </div>
   </div>
 </section>

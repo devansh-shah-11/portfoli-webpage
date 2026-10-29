@@ -29,7 +29,6 @@ export interface PortfolioData {
   personal: {
     name: string
     affiliation: string
-    subheadline: string
     image: string
     imageAlt: string
     aboutImage: string

@@ -8,7 +8,6 @@ import CompactProject from "@/components/CompactProject.astro"
 import Experience from "@/components/Experience.astro"
 import Skills from "@/components/Skills.astro"
 import Education from "@/components/Education.astro"
-import About from "@/components/About.astro"
 import Contact from "@/components/Contact.astro"
 import { portfolioData } from "../utils/data"
 
@@ -49,23 +48,18 @@ const moreProjects = portfolioData.projects.filter((p) => !p.featured)
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="about">
-      <TitleSection num="03" title="About" />
-      <About />
-    </SectionContainer>
-
     <SectionContainer id="skills">
-      <TitleSection num="04" title="Technical skills" />
+      <TitleSection num="03" title="Technical skills" />
       <Skills />
     </SectionContainer>
 
     <SectionContainer id="education">
-      <TitleSection num="05" title="Education" />
+      <TitleSection num="04" title="Education" />
       <Education />
     </SectionContainer>
 
     <SectionContainer id="contact">
-      <TitleSection num="06" title="Contact" />
+      <TitleSection num="05" title="Contact" />
       <Contact />
     </SectionContainer>
   </div>
