@@ -23,7 +23,7 @@ npm run build
 - Project details are available directly on the homepage rather than behind case-study links.
 - Experience uses larger stacked cards with concise summaries, implementation-focused bullets, and technology tags.
 - Added a dedicated Education section with verified NYU coursework.
-- Added section navigation for Projects, Experience, Skills, Education, About, and Contact.
+- Added section navigation for Projects, Experience, Skills, Education, and Contact.
 - Resume link remains intentionally unset until the PDF is supplied.
 
 All portfolio copy is maintained in `data.json`. See `PORTFOLIO_DATA_GUIDE.md` for the supported fields and editing instructions.
