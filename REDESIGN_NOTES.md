@@ -13,7 +13,7 @@
 - Left the resume URL empty because the PDF will be supplied later.
 
 ## Coursework note
-The provided source did not contain a verified list of Nirma University course titles. The site therefore lists selected NYU coursework only rather than inventing undergraduate course names. Add Nirma courses to `data.json` under the Nirma education entry's `coursework` array once you confirm the exact titles.
+Coursework entries for both NYU and Nirma University are now verified and included in `data.json`.
 
 ## Validation
 - `npm run validate-data` passes.
