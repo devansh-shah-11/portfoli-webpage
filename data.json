@@ -2,7 +2,6 @@
   "personal": {
     "name": "Devansh Shah",
     "affiliation": "MS Computer Science · NYU Courant",
-    "subheadline": "Building and evaluating production ML systems across speech, retrieval, vision, and GPU performance.",
     "image": "/avatar.webp",
     "imageAlt": "Portrait of Devansh Shah",
     "aboutImage": "/about.webp",
@@ -349,9 +348,9 @@
     }
   ],
   "about": [
-    "I care about what happens beyond the model.",
-    "My focus is building machine learning systems that remain useful under real-world constraints. That means thinking beyond model accuracy: how data moves through a pipeline, how quality is evaluated, where latency comes from, and how a system behaves when inputs are imperfect.",
-    "Through production AI projects and systems-oriented research at NYU, I've worked across multilingual speech, retrieval, computer vision, and GPU performance modeling. I enjoy the engineering work that connects model capabilities to reliable, measurable system behavior."
+    "Making machine learning systems reliable, measurable, and efficient.",
+    "My work focuses on the engineering around models: evaluating their behavior, understanding failure modes, optimizing performance, and making their outputs dependable enough for real-world use.",
+    "I am particularly interested in LLM reliability, retrieval systems, and performance engineering, where better evaluation and systems design can make the difference between a promising model and a useful product."
   ],
   "education": [
     {
