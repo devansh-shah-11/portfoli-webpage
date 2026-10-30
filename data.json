@@ -35,7 +35,7 @@
       "summary": "A multilingual speech-translation pipeline for Gujarati spiritual discourse, spanning dataset preparation, model training, and evaluation.",
       "stat": {
         "value": "1.2M+",
-        "label": "users across 190+ countries (product-wide)"
+        "label": "users across 190+ countries"
       },
       "built": [
         "Prepared training data and designed evaluation metrics for Gujarati-to-English translation.",
@@ -44,7 +44,7 @@
       ],
       "approach": "The pipeline combines speech recognition, alignment and translation components built around Whisper and NVIDIA NeMo.",
       "evaluation": "An evaluation loop combining synthetic examples, human review, baseline comparisons, and an LLM judge that flagged domain-vocabulary errors for review and retraining.",
-      "result": "The broader product supports eight languages and has reached 1.2M+ users across 190+ countries",
+      "result": "The translation system serves 1.2M+ users across 190+ countries. Fine-tuning with human review and an LLM judge cut critical domain errors from 24% to under 2%.",
       "tech": [
         "Python",
         "Whisper",
@@ -65,8 +65,8 @@
       "featured": true,
       "summary": "A production multimodal search system spanning webpages, articles, audio, video, and PDFs, with timestamped results for video.",
       "stat": {
-        "value": "93%",
-        "label": "click-through rate in the production search experience"
+        "value": "92%",
+        "label": "recall@5 on 250 popular queries with labeled expected results"
       },
       "built": [
         "Combined Voyage embeddings, Weaviate vector retrieval, and BM25 for hybrid search across multiple content types.",
@@ -125,15 +125,15 @@
       "summary": "A hybrid model that predicts CUDA kernel runtime from static code features, LLM-derived semantics, and GPU hardware characteristics.",
       "stat": {
         "value": "5% MAPE",
-        "label": "runtime prediction error across 100 CUDA kernels"
+        "label": "runtime prediction error on 100 held-out CUDA kernels"
       },
       "built": [
         "Combined static CUDA code characteristics with LLM-derived semantic features and hardware information.",
-        "Evaluated predictions on 100 CUDA kernels run on the NYU cluster.",
+        "Evaluated predictions on 100 held-out CUDA kernels run on the NYU cluster.",
         "Compared mean absolute percentage error against a baseline runtime-prediction approach."
       ],
-      "evaluation": "Evaluated on 100 CUDA kernels run on the NYU cluster.",
-      "result": "This was a 20% improvement over the baseline runtime-prediction approach.",
+      "evaluation": "Evaluated on 100 held-out CUDA kernels run on the NYU cluster.",
+      "result": "Error was 20% lower than the baseline runtime-prediction approach.",
       "tech": [
         "CUDA",
         "Python",
@@ -222,12 +222,12 @@
   "experiences": [
     {
       "date": "May 2026 – Aug 2026",
-      "title": "Data Analytics Intern",
+      "title": "Data Science Intern",
       "company": "NFP, an Aon Company",
       "bullets": [
-        "Built a hybrid claims-classification pipeline combining description embeddings and logistic regression with a prompt-tuned Gemma 4 fallback for low-confidence or conflicting predictions. Across 11,000 records, it reached 99% accuracy and approximately 89% PR-AUC.",
-        "Built an embeddings-and-HDBSCAN workflow to group semantically similar claims, then reviewed noise clusters and tuned thresholds to support claim-category loss-ratio analysis across MGAs.",
-        "Trained a Random Forest model to predict one-year loan delinquency from monthly loan data using a time-based split, reaching 91% accuracy."
+        "Built a hybrid classifier combining embeddings, logistic regression, and prompt-tuned Gemma 4 to separate construction-phase claims from post-construction defects, reaching 89% PR-AUC vs a 57% baseline on 11,000+ imbalanced claims.",
+        "Engineered a semantic clustering pipeline using embeddings, HDBSCAN, and Gemma 4 to group claims by accident similarity without labeled data or a fixed cluster count; refined noise points and thresholds via code-driven human-in-the-loop feedback, helping underwriters uncover recurring loss patterns across diverse risks and reduce losses.",
+        "Trained a Random Forest on imbalanced monthly loan data to predict one-year delinquency, achieving 85% PR-AUC; supports proactive identification of at-risk accounts and reserve estimation."
       ],
       "summary": "Applied NLP and machine learning to insurance claims and lending data, supporting risk classification and portfolio-level analysis.",
       "tech": [
@@ -239,16 +239,15 @@
       ]
     },
     {
-      "date": "Jan 2026 – Present",
-      "title": "Co-Founder and Founding Engineer",
+      "date": "Jan 2026 – June 2026",
+      "title": "Co-Founder",
       "company": "LitmusAI",
       "bullets": [
-        "Built a Python SDK with callback-based instrumentation to capture application traces with minimal changes to existing application logic.",
-        "Developed a dashboard connecting traces, test cases, expected outputs, and observed outputs to surface behavioral drift across model, prompt, and configuration changes.",
-        "Implemented golden test suites, custom tests, repeatable evaluations, and persona-driven simulations covering 10+ attack and failure scenarios.",
-        "Worked with five active users across organizations and incorporated framework-compatibility feedback into the SDK."
+        "Co-founded LitmusAI, a platform for evaluating AI agent behavior and enabling insurance underwriting for AI systems.",
+        "Built a Python SDK with callback-based instrumentation and trace-level observability; integrated drift detection and regression testing into CI/CD across 10 attack/failure scenarios, surfacing behavioral drift in a pilot's agent.",
+        "Led user discovery and onboarding for 5 pilots, gathered customer feedback to refine LitmusAI's testing workflows."
       ],
-      "summary": "Co-founding an open-source evaluation platform to detect behavioral regressions in LLM applications and agentic systems, initially focused on AI risk assessment and insurability.",
+      "summary": "Co-founded a platform for evaluating AI agent behavior and detecting behavioral regressions in LLM applications, focused on AI risk assessment and insurance underwriting.",
       "tech": [
         "Python",
         "LLM evaluation",
@@ -261,9 +260,8 @@
       "title": "Machine Learning Engineer",
       "company": "Blueinfy Solutions",
       "bullets": [
-        "Built an automated red-teaming framework using Llama 3.1 and Phi-3.5 Mini to generate, execute, and score adversarial prompts against OWASP Top 10 for LLM applications.",
-        "Designed a five-point severity-grading workflow with human-reviewed ground truth, reducing assessment effort from roughly eight hours of manual testing to under five hours of reviewer time.",
-        "Built a website security-scoring pipeline using a locally deployed Gemma 3 27B model to screen webpage text and screenshots for potential exposure of user information; screened 10,000+ domains and generated concise reports for CISO review."
+        "Built an LLM red-teaming framework by fine-tuning Llama 3.1 and Phi-3.5 Mini on synthetic data from past human-written attacks to generate adversarial prompts, run attacks, and evaluate vulnerabilities across OWASP Top 10 LLM risks; used by internal teams and clients, cutting assessments from 8 hrs to ~4 hrs at 15% false positives.",
+        "Deployed a fully automated agentic system using Gemma 3 27B locally to analyze website text and screenshots for sensitive-data exposure across 10,000+ domains, generating security reports for CISO review."
       ],
       "summary": "Developed AI security testing and privacy-screening systems for adversarial chatbot behavior and potential exposure of sensitive information.",
       "tech": [
@@ -300,7 +298,8 @@
         "Hybrid retrieval and RAG",
         "Supervised fine-tuning",
         "LLM-as-judge",
-        "Prompt engineering"
+        "Prompt engineering",
+        "vLLM"
       ]
     },
     {
@@ -343,7 +342,8 @@
         "AWS",
         "GCP",
         "Docker",
-        "GitHub"
+        "Kubernetes",
+        "Git"
       ]
     }
   ],
@@ -354,7 +354,7 @@
   ],
   "education": [
     {
-      "date": "Sep 2025 – Dec 2026",
+      "date": "Sep 2025 – May 2027",
       "degree": "M.S. Computer Science",
       "institution": "New York University, Courant Institute",
       "coursework": [
