@@ -48,7 +48,7 @@ const THEMES = ["Light", "Dark", "System"]
     var menu = document.getElementById("themes-menu")
 
     function pref() {
-      try { return localStorage.getItem("theme") || "system" } catch (e) { return "system" }
+      try { return localStorage.getItem("theme") || "light" } catch (e) { return "light" }
     }
     function apply() {
       var p = pref()
