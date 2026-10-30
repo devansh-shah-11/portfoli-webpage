@@ -24,7 +24,6 @@ const moreProjects = portfolioData.projects.filter((p) => !p.featured)
   <div class="space-y-16 sm:space-y-24">
     <SectionContainer id="projects">
       <TitleSection num="01" title="Projects" />
-      <p class="mb-8 max-w-3xl text-muted">Selected work across production AI, retrieval systems, computer vision, and GPU performance. Technical approaches and results are shown inline.</p>
       <div class="grid items-stretch gap-5 xl:grid-cols-2">
         {featured.map((project) => <ProjectCard project={project} />)}
       </div>
