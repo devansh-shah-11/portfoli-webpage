@@ -31,7 +31,7 @@ const featured = Boolean(project.featured)
 
   {featured && project.flow && project.flow.length > 0 && (
     <div class="mt-5 rounded-xl bg-tint/55 p-3 sm:p-4">
-      <p class="mb-3 font-mono text-sm uppercase tracking-wider text-muted">System flow</p>
+      <p class="mb-3 font-mono text-sm text-muted">System flow</p>
       <ol class="flex flex-wrap items-center gap-x-2 gap-y-2" aria-label={`${project.title} system flow`}>
         {project.flow.map((step, i) => (
           <li class="flex items-center gap-2">
@@ -45,14 +45,14 @@ const featured = Boolean(project.featured)
 
   {featured && project.approach && (
     <div class="mt-5">
-      <h4 class="font-mono text-sm uppercase tracking-wider text-muted">Technical approach</h4>
+      <h4 class="font-mono text-sm text-muted">Technical approach</h4>
       <p class="mt-2 text-lg leading-relaxed">{project.approach}</p>
     </div>
   )}
 
   {project.built && project.built.length > 0 && (
     <div class="mt-5">
-      {featured && <h4 class="font-mono text-sm uppercase tracking-wider text-muted">Engineering details</h4>}
+      {featured && <h4 class="font-mono text-sm text-muted">Engineering details</h4>}
       <ul class={`${featured ? "mt-2" : "mt-3"} space-y-2.5 text-lg leading-relaxed text-muted`}>
         {project.built.map((item) => (
           <li class="relative pl-4 before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-2 before:bg-accent/80">{item}</li>

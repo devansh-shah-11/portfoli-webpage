@@ -13,10 +13,10 @@ const navItems = [
 ]
 ---
 
-<header class="sticky top-0 z-20 border-b border-line bg-paper/85 backdrop-blur">
+<header class="sticky top-0 z-20 border-b border-line bg-paper">
   <div class="px-4 sm:px-6">
   <div class="mx-auto max-w-6xl h-14 flex items-center justify-between gap-4">
-    <a href="/" class="font-serif text-lg font-medium shrink-0">{data.personal.name}</a>
+    <a href="/" data-brand class="font-serif text-lg font-medium shrink-0 transition-opacity duration-200 data-[hidden=true]:opacity-0 data-[hidden=true]:pointer-events-none">{data.personal.name}</a>
     <nav aria-label="Primary" class="flex items-center gap-1 sm:gap-2 text-sm">
       <ul class="hidden md:flex items-center gap-1">
         {
@@ -71,6 +71,15 @@ const navItems = [
 <script>
   // Highlight the nav link for the section currently in view
   document.addEventListener("astro:page-load", () => {
+    const brand = document.querySelector<HTMLElement>("[data-brand]")
+    const heroName = document.querySelector("#top h1")
+    if (brand && heroName) {
+      brand.dataset.hidden = "true"
+      new IntersectionObserver(
+        ([e]) => { brand.dataset.hidden = String(e.isIntersecting) },
+        { rootMargin: "-56px 0px 0px 0px" }
+      ).observe(heroName)
+    }
     const links = document.querySelectorAll<HTMLAnchorElement>("[data-nav]")
     const sections = document.querySelectorAll<HTMLElement>("main section[id]")
     if (!sections.length) return
