@@ -110,7 +110,7 @@
         "Vision-language models",
         "Simulation"
       ],
-      "featured": true,
+      "featured": false,
       "flow": [
         "Fast perception",
         "Risk gate",
@@ -150,26 +150,32 @@
     },
     {
       "slug": "face-recognition",
-      "title": "Face Recognition for Community Deployments",
+      "title": "Vision Transformer-Based Scalable Biometric System",
       "kind": "Open source",
-      "summary": "An open-source Siamese face-recognition model using ResNet-based embeddings and triplet loss, developed for a community deployment.",
+      "summary": "Architected and scaled a facial biometric identification system using Vision Transformers, designed to support diverse demographic groups and large-scale face retrieval.",
       "stat": {
-        "value": "8,000+",
-        "label": "members on the deployment site"
+        "value": "~700 ms",
+        "label": "end-to-end p99 latency against 1M+ face embeddings"
       },
       "built": [
-        "Trained a Siamese model with ResNet-based embeddings and triplet loss.",
-        "Used augmentation and a dataset of Indian faces.",
-        "Open-sourced the implementation and mentored contributors through GirlScript Summer of Code."
+        "Developed a facial embedding pipeline using Vision Transformers, with supervised fine-tuning (SFT) to improve biometric representation across varied populations.",
+        "Optimized embedding retrieval for edge deployment using OpenVINO, achieving approximately 700 ms p99 latency against a database of 1M+ face embeddings.",
+        "Facilitated deployment across community centers in Ahmedabad, extending the system's reach to 10,000+ people."
       ],
-      "result": "The deployment site had a membership base exceeding 8,000.",
+      "result": "Deployed across community centers in Ahmedabad, reaching 10,000+ people.",
       "tech": [
         "Python",
         "PyTorch",
-        "ResNet",
-        "Triplet loss"
+        "Vision Transformers",
+        "OpenVINO"
       ],
-      "featured": false
+      "featured": true,
+      "flow": [
+        "Face images",
+        "ViT embeddings (SFT)",
+        "OpenVINO edge pipeline + retrieval over 1M+",
+        "Identification"
+      ]
     },
     {
       "slug": "prompt-invariant-training",
