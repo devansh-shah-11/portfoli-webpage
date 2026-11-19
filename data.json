@@ -74,7 +74,7 @@
         "Used an LLM reranking stage to refine retrieved results."
       ],
       "approach": "Hybrid retrieval using Voyage embeddings, Weaviate and BM25, with an in-house timestamping model and an LLM reranking stage.",
-      "result": "The system serves 10,000+ monthly users with under 1.5-second median end-to-end latency.",
+      "result": "The system serves 10,000+ monthly users with 500 ms median latency.",
       "tech": [
         "Embeddings",
         "Weaviate",
@@ -160,9 +160,9 @@
       "built": [
         "Developed a facial embedding pipeline using Vision Transformers, with supervised fine-tuning (SFT) to improve biometric representation across varied populations.",
         "Optimized embedding retrieval for edge deployment using OpenVINO, achieving approximately 700 ms p99 latency against a database of 1M+ face embeddings.",
-        "Facilitated deployment across community centers in Ahmedabad, extending the system's reach to 10,000+ people."
+        "Facilitated deployment across community centers in Ahmedabad, extending the system's reach to 14,000+ people."
       ],
-      "result": "Deployed across community centers in Ahmedabad, reaching 10,000+ people.",
+      "result": "Deployed across community centers in Ahmedabad, reaching 14,000+ people.",
       "tech": [
         "Python",
         "PyTorch",
